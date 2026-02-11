@@ -88,7 +88,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         </div>
                     )}
 
-                    <div className="flex min-w-0 flex-1 flex-col space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                    <div className="flex min-w-0 flex-1 flex-col space-y-4">
                         <div className="flex flex-wrap gap-4">
                             {!project.is_private && project.html_url && (
                                 <a
