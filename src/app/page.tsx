@@ -7,7 +7,8 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export default function Home() {
-  const projects = projectsData as Project[];
+  const allProjects = projectsData as Project[];
+  const projects = allProjects.filter(p => !p.hidden);
 
   // Define Featured Projects explicitly via override `featured: true` or manual check
   const featured = projects.filter(p => p.featured);
