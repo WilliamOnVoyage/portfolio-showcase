@@ -1,62 +1,44 @@
-
 'use client';
 
 import { useEffect, useState } from "react";
 import { Palette, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
 
-type Theme = 'default' | 'ocean' | 'forest' | 'cyberpunk';
+type ColorPalette = 'default' | 'ocean' | 'forest' | 'cyberpunk';
 
 export function ThemeSwitcher() {
-    const [theme, setTheme] = useState<Theme>('default');
-    const [isDark, setIsDark] = useState(true); // Default to dark
+    // next-themes handles dark/light mode
+    const { theme: mode, setTheme: setMode, resolvedTheme } = useTheme();
+
+    // We handle color palette manually
+    const [palette, setPalette] = useState<ColorPalette>('default');
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 
-    // Load theme and dark mode from localStorage
+    // Initial mount and palette loading
     useEffect(() => {
         setMounted(true);
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        const savedDark = localStorage.getItem('darkMode');
-
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.setAttribute('data-theme', savedTheme);
+        // Load custom color palette
+        const savedPalette = localStorage.getItem('portfolio-theme-color') as ColorPalette;
+        if (savedPalette) {
+            setPalette(savedPalette);
+            document.documentElement.setAttribute('data-theme', savedPalette);
         }
-
-        // Check saved preference or system preference if not saved
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const shouldBeDark = savedDark === 'true' || (!savedDark && prefersDark);
-
-        setIsDark(shouldBeDark);
-        if (shouldBeDark) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
     }, []);
 
-    const changeTheme = (t: Theme) => {
-        setTheme(t);
-        document.documentElement.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-        // Keep menu open to allow toggling dark mode too
+    const changePalette = (p: ColorPalette) => {
+        setPalette(p);
+        document.documentElement.setAttribute('data-theme', p);
+        localStorage.setItem('portfolio-theme-color', p);
     };
 
     const toggleDarkMode = () => {
-        const newDark = !isDark;
-        setIsDark(newDark);
-        localStorage.setItem('darkMode', String(newDark));
-        if (newDark) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        setMode(resolvedTheme === 'dark' ? 'light' : 'dark');
     };
 
-    const themes: { id: Theme; label: string; color: string }[] = [
+    const palettes: { id: ColorPalette; label: string; color: string }[] = [
         { id: 'default', label: 'Default', color: 'bg-zinc-500' },
         { id: 'ocean', label: 'Ocean', color: 'bg-sky-500' },
         { id: 'forest', label: 'Forest', color: 'bg-green-600' },
@@ -64,6 +46,8 @@ export function ThemeSwitcher() {
     ];
 
     if (!mounted) return null;
+
+    const isDark = resolvedTheme === 'dark';
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
@@ -91,23 +75,23 @@ export function ThemeSwitcher() {
                             </button>
                         </div>
 
-                        {/* Themes List */}
+                        {/* Color Palette List */}
                         <div className="space-y-1">
                             <span className="px-2 text-xs font-semibold text-muted-foreground">Color Palette</span>
-                            {themes.map((t) => (
+                            {palettes.map((p) => (
                                 <button
-                                    key={t.id}
-                                    onClick={() => changeTheme(t.id)}
+                                    key={p.id}
+                                    onClick={() => changePalette(p.id)}
                                     className={cn(
                                         "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-                                        theme === t.id && "bg-accent text-accent-foreground font-medium"
+                                        palette === p.id && "bg-accent text-accent-foreground font-medium"
                                     )}
                                 >
                                     <span className="flex items-center gap-2">
-                                        <span className={cn("h-3 w-3 rounded-full", t.color)} />
-                                        {t.label}
+                                        <span className={cn("h-3 w-3 rounded-full", p.color)} />
+                                        {p.label}
                                     </span>
-                                    {theme === t.id && <span className="text-xs">✓</span>}
+                                    {palette === p.id && <span className="text-xs">✓</span>}
                                 </button>
                             ))}
                         </div>
