@@ -19,11 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleOpen = () => {
-        if (project.is_private || project.longDescription) {
-            setIsModalOpen(true);
-        } else {
-            window.open(project.html_url, '_blank');
-        }
+        setIsModalOpen(true);
     };
 
     return (
@@ -92,17 +88,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         </div>
                     )}
 
-                    <div className="flex min-w-0 flex-1 flex-col space-y-4">
+                    <div className="flex min-w-0 flex-1 flex-col space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                         <div className="flex flex-wrap gap-4">
                             {!project.is_private && project.html_url && (
                                 <a
                                     href={project.html_url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-2 text-sm font-medium hover:underline"
+                                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
                                 >
-                                    <Github className="h-4 w-4" />
-                                    View on GitHub
+                                    <Globe className="h-4 w-4" />
+                                    Public Repository
                                 </a>
                             )}
                             {(project.homepage || project.liveUrl) && (
