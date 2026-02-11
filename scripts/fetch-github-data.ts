@@ -97,7 +97,7 @@ async function main() {
 
         // Date Filtering Logic
         const cutoffDate = new Date('2020-01-01T00:00:00Z');
-        const updateDate = new Date(repo.updated_at);
+        const updateDate = new Date(repo.pushed_at); // Use pushed_at for code activity
         const isOld = updateDate < cutoffDate;
 
         // Hidden Logic:

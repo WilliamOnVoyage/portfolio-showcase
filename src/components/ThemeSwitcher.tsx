@@ -10,7 +10,7 @@ type Theme = 'default' | 'ocean' | 'forest' | 'cyberpunk';
 
 export function ThemeSwitcher() {
     const [theme, setTheme] = useState<Theme>('default');
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true); // Default to dark
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 

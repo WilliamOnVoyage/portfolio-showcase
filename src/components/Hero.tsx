@@ -13,7 +13,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
                 className="max-w-3xl space-y-6"
             >
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pb-2">
                     Building the Future of AI
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground">
