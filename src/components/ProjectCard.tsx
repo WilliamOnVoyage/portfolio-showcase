@@ -7,6 +7,7 @@ import { Modal } from "@/components/ui/Modal";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Star, Lock, Globe } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectCardProps {
     project: Project;
@@ -78,8 +79,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <div className="space-y-4">
                     {project.mockup && (
                         <div className="relative aspect-video w-full overflow-hidden rounded-md bg-muted">
-                            {/* Use next/image in real imp, standard img for now */}
-                            <img src={project.mockup} alt={project.name} className="object-cover w-full h-full" />
+                            <Image
+                                src={project.mockup}
+                                alt={project.name}
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     )}
 
