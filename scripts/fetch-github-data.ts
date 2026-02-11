@@ -87,16 +87,29 @@ async function main() {
             });
             if (res.ok) {
                 contract = await res.json();
-                // console.log(`Found contract for ${repo.name}`);
             }
         } catch (e) {
             // Ignore errors (file not found, etc)
         }
 
-        // Hide private URL unless overridden (which is unlikely for strict privacy)
-        // But we might want to link to a demo or something.
         const isPrivate = repo.private;
         const htmlUrl = isPrivate ? null : repo.html_url;
+
+        // Date Filtering Logic
+        const cutoffDate = new Date('2020-01-01T00:00:00Z');
+        const updateDate = new Date(repo.updated_at);
+        const isOld = updateDate < cutoffDate;
+
+        // Hidden Logic:
+        // 1. Explicit override takes precedence
+        // 2. If no override, hide if old
+        // 3. Otherwise show
+        let isHidden = false;
+        if (override.hidden !== undefined) {
+            isHidden = override.hidden;
+        } else if (isOld) {
+            isHidden = true;
+        }
 
         return {
             id: repo.name,
@@ -111,15 +124,13 @@ async function main() {
             is_private: isPrivate,
             topics: repo.topics || [],
 
-            // key fields from override
             techStack: override.techStack || (repo.language ? [repo.language] : []),
             category: override.category || 'Other',
             featured: override.featured || false,
             mockup: contract.thumbnail || override.mockup || null,
             longDescription: contract.publicDescription || override.longDescription || null,
-            hidden: override.hidden || false,
+            hidden: isHidden,
 
-            // Contract specific
             tagline: contract.tagline || null,
             demoUrl: contract.demoUrl || null,
             liveUrl: contract.liveUrl || null,
@@ -158,7 +169,6 @@ async function main() {
                 longDescription: override.longDescription || null,
                 hidden: false,
 
-                // Contract specific
                 tagline: null,
                 demoUrl: null,
                 liveUrl: null,
