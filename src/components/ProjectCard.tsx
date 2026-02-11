@@ -79,71 +79,73 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
 
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.name}>
-                <div className="space-y-4">
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.name} className="sm:max-w-2xl">
+                <div className="flex flex-col gap-6 md:flex-row">
                     {project.mockup && (
-                        <div className="relative h-32 w-full overflow-hidden rounded-md bg-muted">
+                        <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-md md:h-auto md:w-48">
                             <Image
                                 src={project.mockup}
                                 alt={project.name}
                                 fill
-                                className="object-cover"
+                                className="object-contain object-top"
                             />
                         </div>
                     )}
 
-                    <div className="flex gap-4 pt-2">
-                        {!project.is_private && project.html_url && (
-                            <a
-                                href={project.html_url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium hover:underline"
-                            >
-                                <Github className="h-4 w-4" />
-                                View on GitHub
-                            </a>
-                        )}
-                        {(project.homepage || project.liveUrl) && (
-                            <a
-                                href={project.liveUrl || project.homepage || '#'}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium hover:underline"
-                            >
-                                <Globe className="h-4 w-4" />
-                                Live Site
-                            </a>
-                        )}
-                        {project.demoUrl && (
-                            <a
-                                href={project.demoUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium hover:underline text-primary"
-                            >
-                                <Globe className="h-4 w-4" />
-                                Watch Demo
-                            </a>
-                        )}
-                        {project.is_private && (
-                            <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                                <Lock className="h-4 w-4" />
-                                Private Repository
-                            </span>
-                        )}
-                    </div>
+                    <div className="flex min-w-0 flex-1 flex-col space-y-4">
+                        <div className="flex flex-wrap gap-4">
+                            {!project.is_private && project.html_url && (
+                                <a
+                                    href={project.html_url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-2 text-sm font-medium hover:underline"
+                                >
+                                    <Github className="h-4 w-4" />
+                                    View on GitHub
+                                </a>
+                            )}
+                            {(project.homepage || project.liveUrl) && (
+                                <a
+                                    href={project.liveUrl || project.homepage || '#'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-2 text-sm font-medium hover:underline"
+                                >
+                                    <Globe className="h-4 w-4" />
+                                    Live Site
+                                </a>
+                            )}
+                            {project.demoUrl && (
+                                <a
+                                    href={project.demoUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-2 text-sm font-medium hover:underline text-primary"
+                                >
+                                    <Globe className="h-4 w-4" />
+                                    Watch Demo
+                                </a>
+                            )}
+                            {project.is_private && (
+                                <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                                    <Lock className="h-4 w-4" />
+                                    Private Repository
+                                </span>
+                            )}
+                        </div>
 
-                    <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
-                        <ReactMarkdown>
-                            {project.longDescription || project.description}
-                        </ReactMarkdown>
-                    </div>
+                        <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
+                            <ReactMarkdown>
+                                {project.longDescription || project.description}
+                            </ReactMarkdown>
+                        </div>
 
-                    <div className="flex flex-wrap gap-2">
-                        {project.techStack?.map((tech) => (
-                            <Badge key={tech}>{tech}</Badge>
-                        ))}
+                        <div className="flex flex-wrap gap-2">
+                            {project.techStack?.map((tech) => (
+                                <Badge key={tech}>{tech}</Badge>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </Modal>
