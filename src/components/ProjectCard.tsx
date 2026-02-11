@@ -82,7 +82,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.name}>
                 <div className="space-y-4">
                     {project.mockup && (
-                        <div className="relative h-64 w-full overflow-hidden rounded-md bg-muted">
+                        <div className="relative h-32 w-full overflow-hidden rounded-md bg-muted">
                             <Image
                                 src={project.mockup}
                                 alt={project.name}
@@ -92,19 +92,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         </div>
                     )}
 
-                    <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
-                        <ReactMarkdown>
-                            {project.longDescription || project.description}
-                        </ReactMarkdown>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                        {project.techStack?.map((tech) => (
-                            <Badge key={tech}>{tech}</Badge>
-                        ))}
-                    </div>
-
-                    <div className="flex gap-4 pt-4">
+                    <div className="flex gap-4 pt-2">
                         {!project.is_private && project.html_url && (
                             <a
                                 href={project.html_url}
@@ -144,6 +132,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                 Private Repository
                             </span>
                         )}
+                    </div>
+
+                    <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
+                        <ReactMarkdown>
+                            {project.longDescription || project.description}
+                        </ReactMarkdown>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                        {project.techStack?.map((tech) => (
+                            <Badge key={tech}>{tech}</Badge>
+                        ))}
                     </div>
                 </div>
             </Modal>
