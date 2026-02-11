@@ -111,6 +111,48 @@ async function main() {
             isHidden = true;
         }
 
+        // ... existing mapping logic ...
+
+        // Image Handling (Download if relative)
+        let finalMockup = contract.thumbnail || override.mockup || null;
+
+        if (finalMockup && !finalMockup.startsWith('http')) {
+            // It's a relative path (e.g. "images/demo.png" or "./demo.png" or "/images/demo.png")
+            // Remove leading ./ or /
+            const relativePath = finalMockup.replace(/^(\.\/|\/)/, '');
+            const extension = path.extname(relativePath);
+            const localFilename = `${repo.name}-thumbnail${extension}`;
+            const localPath = path.join(process.cwd(), 'public', 'images', 'projects', localFilename);
+            const publicPath = `/portfolio-showcase/images/projects/${localFilename}`; // Use base path
+
+            try {
+                // Check if we already have it (optional: skip if exists, but for now we overwrite to update)
+                // Download from GitHub API (works for private repos)
+                const apiUrl = `https://api.github.com/repos/${repo.full_name}/contents/${relativePath}`;
+                const res = await fetch(apiUrl, {
+                    headers: {
+                        Authorization: `token ${GITHUB_TOKEN}`,
+                        'User-Agent': 'portfolio-showcase-v1',
+                        'Accept': 'application/vnd.github.v3.raw' // RAW format to get binary
+                    }
+                });
+
+                if (res.ok) {
+                    const buffer = await res.arrayBuffer();
+                    await fs.writeFile(localPath, Buffer.from(buffer));
+                    console.log(`Downloaded thumbnail for ${repo.name} to ${localPath}`);
+                    finalMockup = publicPath;
+                } else {
+                    console.warn(`Failed to download thumbnail for ${repo.name}: ${res.status} ${res.statusText}`);
+                    // Fallback: don't show broken image
+                    finalMockup = null;
+                }
+            } catch (err) {
+                console.error(`Error processing thumbnail for ${repo.name}:`, err);
+                finalMockup = null;
+            }
+        }
+
         return {
             id: repo.name,
             name: repo.name,
@@ -127,7 +169,7 @@ async function main() {
             techStack: override.techStack || (repo.language ? [repo.language] : []),
             category: override.category || 'Other',
             featured: override.featured || false,
-            mockup: contract.thumbnail || override.mockup || null,
+            mockup: finalMockup,
             longDescription: contract.publicDescription || override.longDescription || null,
             hidden: isHidden,
 
