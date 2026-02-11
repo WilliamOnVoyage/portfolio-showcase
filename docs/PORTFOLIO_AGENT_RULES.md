@@ -14,7 +14,8 @@ The `PORTFOLIO.json` schema:
   "tagline": "String. One sentence summary.",
   "publicDescription": "String. Markdown supported. Detailed explanation.",
   "demoUrl": "String. URL to a video or demo.",
-  "liveUrl": "String. URL to the deployed application."
+  "liveUrl": "String. URL to the deployed application.",
+  "thumbnail": "String. Path to image (e.g. /images/demo.png)."
 }
 ```
 
@@ -24,6 +25,4 @@ If you are an AI assistant editing this code:
 1.  **DETECT**: Check if `PORTFOLIO.json` exists.
 2.  **MAINTAIN NARRATIVE**: If you make significant architectural changes, propose an update to `publicDescription` to reflect the new capabilities.
 3.  **PROTECT PRIVACY**: NEVER add secrets, internal IPs, or PII.
-
-**Note**: You do NOT need to update `techStack` or `category`. These are managed centrally by the portfolio repository.
 ```
