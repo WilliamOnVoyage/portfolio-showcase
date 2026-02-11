@@ -8,6 +8,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Star, Lock, Globe } from "lucide-react";
 import Image from "next/image";
+import ReactMarkdown from 'react-markdown';
+
 
 interface ProjectCardProps {
     project: Project;
