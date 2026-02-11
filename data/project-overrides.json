@@ -1,0 +1,219 @@
+{
+  "CreditStack": {
+    "description": "Full-stack fintech application designed for credit card management and rewards optimization. Built with Next.js and TypeScript, featuring real-time data tracking and personalized recommendations.",
+    "techStack": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Prisma"
+    ],
+    "category": "FinTech & Crypto",
+    "featured": true,
+    "mockup": "/images/creditstack-mockup.png"
+  },
+  "Dice-Dine": {
+    "description": "AI-powered dining recommendation engine leveraging GPT-4 for personalized suggestions based on user preferences and location data.",
+    "techStack": [
+      "Python",
+      "OpenAI API",
+      "FastAPI",
+      "React"
+    ],
+    "category": "AI & Data Science",
+    "featured": true,
+    "mockup": "/images/dicedine-mockup.png"
+  },
+  "CryptoX": {
+    "description": "Quantitative analysis tool for cryptocurrency markets, providing real-time metrics and trend forecasting.",
+    "techStack": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib"
+    ],
+    "category": "FinTech & Crypto"
+  },
+  "intelinv": {
+    "description": "Intelligent Investment analysis platform.",
+    "techStack": [
+      "Python",
+      "Data Science"
+    ],
+    "category": "FinTech & Crypto"
+  },
+  "GoldDigger": {
+    "description": "Advanced data mining and financial analysis tool for identifying market opportunities.",
+    "techStack": [
+      "Python",
+      "Scrapy",
+      "Financial APIs"
+    ],
+    "category": "FinTech & Crypto"
+  },
+  "Wooji-Web": {
+    "description": "Web interface for Wooji Capital's asset management system.",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Node.js"
+    ],
+    "category": "Professional Collaboration"
+  },
+  "EquityFactorModel": {
+    "description": "Sophisticated financial modeling system for equity factor analysis.",
+    "techStack": [
+      "Python",
+      "Quantitative Finance"
+    ],
+    "category": "Professional Collaboration"
+  },
+  "WoojiDatabase": {
+    "description": "Core database infrastructure for Wooji Capital.",
+    "techStack": [
+      "SQL",
+      "Python"
+    ],
+    "category": "Professional Collaboration",
+    "hidden": true
+  },
+  "GameAegis": {
+    "description": "Data collection agent for online game analytics, part of the Project Aegis suite.",
+    "techStack": [
+      "Python",
+      "AsyncIO"
+    ],
+    "category": "Project Aegis Suite"
+  },
+  "AegisTensor": {
+    "description": "Deep learning modeling package for the Aegis analytics suite.",
+    "techStack": [
+      "Python",
+      "TensorFlow",
+      "Keras"
+    ],
+    "category": "Project Aegis Suite"
+  },
+  "Aegis-Loki": {
+    "description": "Regional analytics module for Project Aegis.",
+    "category": "Project Aegis Suite"
+  },
+  "Aegis-Metro": {
+    "description": "Metropolitan data analysis module for Project Aegis.",
+    "category": "Project Aegis Suite"
+  },
+  "Aegis-Sovereign": {
+    "description": "Sovereign state analytics module for Project Aegis.",
+    "category": "Project Aegis Suite"
+  },
+  "VIT-PLA": {
+    "description": "Visual Interactive Tool for Process Log Analysis.",
+    "techStack": [
+      "Java",
+      "Visualization"
+    ],
+    "category": "AI & Data Science",
+    "hidden": true
+  },
+  "sequence_gan": {
+    "description": "Generative Adversarial Networks for sequence generation.",
+    "techStack": [
+      "Python",
+      "TensorFlow",
+      "GANs"
+    ],
+    "category": "AI & Data Science",
+    "hidden": true
+  },
+  "keras-attention-mechanism": {
+    "description": "Implementation of attention mechanisms for Keras models.",
+    "techStack": [
+      "Python",
+      "Keras",
+      "Deep Learning"
+    ],
+    "category": "AI & Data Science",
+    "hidden": true
+  },
+  "SCOT-99": {
+    "hidden": true
+  },
+  "horovod": {
+    "hidden": true
+  },
+  "RL-DL-Based-Sequence-Prediction": {
+    "hidden": true
+  },
+  "SeqGAN": {
+    "hidden": true
+  },
+  "VITPLA-WEB": {
+    "hidden": true
+  },
+  "gym": {
+    "hidden": true
+  },
+  "AutoSampling": {
+    "hidden": true
+  },
+  "RLWorkflow": {
+    "hidden": true
+  },
+  "PersonalWeb": {
+    "hidden": true
+  },
+  "TensorFlow-Examples": {
+    "hidden": true
+  },
+  "C-Fraction-Class": {
+    "hidden": true
+  },
+  "Private-Repository-Summary": {
+    "hidden": true
+  },
+  "ActivityPrediction_TF": {
+    "hidden": true
+  },
+  "PacMan-and-Flappy-bird-with-Reinforcement-Learning": {
+    "hidden": true
+  },
+  "Pattern_Recognition": {
+    "hidden": true
+  },
+  "ActivityPrediction_Mat_Visual": {
+    "hidden": true
+  },
+  "VIT-PLA_AlignmentEvaluation": {
+    "hidden": true
+  },
+  "VIT-PLA_Alignment": {
+    "hidden": true
+  },
+  "deeplearning": {
+    "hidden": true
+  },
+  "SVM_analysis_tool": {
+    "hidden": true
+  },
+  "AIM2_DataPrePro": {
+    "hidden": true
+  },
+  "XDBIO_Master": {
+    "hidden": true
+  },
+  "HMM_stats": {
+    "hidden": true
+  },
+  "NeuralNetwork": {
+    "hidden": true
+  },
+  "ICHI_HMM": {
+    "hidden": true
+  },
+  "LeetCode": {
+    "hidden": true
+  },
+  "XDBIO_Client": {
+    "hidden": true
+  }
+}
