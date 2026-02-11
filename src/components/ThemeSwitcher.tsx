@@ -10,7 +10,7 @@ type ColorPalette = 'default' | 'ocean' | 'forest' | 'cyberpunk';
 
 export function ThemeSwitcher() {
     // next-themes handles dark/light mode
-    const { theme: mode, setTheme: setMode, resolvedTheme } = useTheme();
+    const { setTheme: setMode, resolvedTheme } = useTheme();
 
     // We handle color palette manually
     const [palette, setPalette] = useState<ColorPalette>('default');
