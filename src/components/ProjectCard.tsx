@@ -77,9 +77,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
             </motion.div>
 
-            import ReactMarkdown from 'react-markdown';
 
-            // ...
 
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.name}>
                 <div className="space-y-4">
