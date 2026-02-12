@@ -12,6 +12,16 @@
     "featured": true,
     "mockup": "images/creditstack-mockup.png"
   },
+  "World-of-Warships-Stats-Analysis": {
+    "featured": true,
+    "category": "Other"
+  },
+  "portfolio-showcase": {
+    "hidden": true
+  },
+  "VibeCodingTemplate": {
+    "hidden": true
+  },
   "Dice-Dine": {
     "description": "AI-powered dining recommendation engine leveraging GPT-4 for personalized suggestions based on user preferences and location data.",
     "techStack": [
@@ -53,6 +63,7 @@
     "category": "FinTech & Crypto"
   },
   "Wooji-Web": {
+    "hidden": true,
     "description": "Web interface for Wooji Capital's asset management system.",
     "techStack": [
       "React",
@@ -215,6 +226,9 @@
     "hidden": true
   },
   "XDBIO_Client": {
+    "hidden": true
+  },
+  "WoojiDataPrep": {
     "hidden": true
   }
 }
