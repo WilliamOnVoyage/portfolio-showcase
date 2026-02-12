@@ -5,6 +5,9 @@ const nextConfig = {
     basePath: isProd ? '/portfolio-showcase' : '',
     images: {
         unoptimized: true
+    },
+    env: {
+        NEXT_PUBLIC_BASE_PATH: isProd ? '/portfolio-showcase' : '',
     }
 };
 

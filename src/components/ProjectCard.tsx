@@ -80,7 +80,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     {project.mockup && (
                         <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-md md:h-auto md:w-48">
                             <Image
-                                src={project.mockup}
+                                src={project.mockup?.startsWith('http') ? project.mockup : `${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.mockup}`}
                                 alt={project.name}
                                 fill
                                 className="object-contain object-top"

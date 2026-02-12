@@ -123,7 +123,10 @@ async function main() {
             const extension = path.extname(relativePath);
             const localFilename = `${repo.name}-thumbnail${extension}`;
             const localPath = path.join(process.cwd(), 'public', 'images', 'projects', localFilename);
-            const publicPath = `/images/projects/${localFilename}`; // relative to public root
+            const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+            const publicPath = isGitHubActions
+                ? `/portfolio-showcase/images/projects/${localFilename}`
+                : `/images/projects/${localFilename}`; // relative to public root
 
             try {
                 // Check if we already have it (optional: skip if exists, but for now we overwrite to update)
