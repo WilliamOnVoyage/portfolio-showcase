@@ -175,7 +175,7 @@ function Scene() {
         <mesh position={[0, 0, 0]}>
             <planeGeometry args={[2, 2]} />
             {/* 
-        // @ts-ignore */}
+        // @ts-expect-error - Custom element */}
             <blackHoleMaterial ref={materialRef} transparent />
         </mesh>
     );
