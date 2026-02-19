@@ -1,10 +1,15 @@
 
+import dynamic from "next/dynamic";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types";
 import { Hero } from "@/components/Hero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+
+const BlackHoleBackground = dynamic(() => import("@/components/BlackHole").then(mod => mod.BlackHoleBackground), {
+  ssr: false,
+});
 
 export default function Home() {
   const allProjects = projectsData as Project[];
@@ -20,7 +25,8 @@ export default function Home() {
   const archive = projects.filter(p => !p.featured && p.category !== "Professional Collaboration" && p.category !== "Project Aegis Suite");
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen text-foreground relative overflow-hidden">
+      <BlackHoleBackground />
       <Hero />
       <ThemeSwitcher />
 
