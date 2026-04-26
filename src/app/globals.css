@@ -186,6 +186,82 @@
     --ring: 320 100% 55%;
   }
 
+  /* --- ENGINEERED ELEGANCE THEME (Previously Eva) --- */
+  [data-theme='eva'] {
+    --background: 0 0% 2%; /* Deep OLED Black */
+    --foreground: 0 0% 95%; /* Crisp off-white */
+
+    --card: 0 0% 5%; /* Slightly lighter than bg */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Pure White (Primary UI elements) */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Neon Cyan (Secondary interactive elements) */
+    --secondary: 190 100% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted text for subtle tech details */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Neon Orange (Accent/Warning) */
+    --accent: 21 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%; /* Very subtle dark borders */
+    --input: 0 0% 10%;
+    --ring: 0 0% 100%; /* White ring */
+    --radius: 0.25rem; /* Slight tech-feel rounding */
+  }
+
+  /* Specific typography overrides for Engineered Elegance */
+  [data-theme='eva'] h1,
+  [data-theme='eva'] h2,
+  [data-theme='eva'] h3 {
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Link hover states (Neon Cyan) */
+  [data-theme='eva'] a:hover {
+    color: hsl(190, 100%, 38%);
+  }
+
+  .dark[data-theme='eva'],
+  [data-theme='eva'].dark {
+    /* Identical to light mode since it's a true dark theme */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 190 100% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 21 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 100%;
+  }
 }
 
 @layer base {
@@ -195,5 +271,15 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-background/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .hud-border {
+    @apply border-l-2 border-primary pl-4;
   }
 }

@@ -117,21 +117,36 @@ async function main() {
         let finalMockup = contract.thumbnail || override.mockup || null;
 
         if (finalMockup && !finalMockup.startsWith('http')) {
-            // It's a relative path (e.g. "images/demo.png" or "./demo.png" or "/images/demo.png")
-            // Remove leading ./ or /
+            // A leading /images/... path can intentionally reference a static asset
+            // committed to this portfolio app's public directory. Keep it local if
+            // the file exists; otherwise treat it as a repo-relative thumbnail path
+            // and try to download it from GitHub.
             const relativePath = finalMockup.replace(/^(\.\/|\/)/, '');
-            const extension = path.extname(relativePath);
-            const localFilename = `${repo.name}-thumbnail${extension}`;
-            const localPath = path.join(process.cwd(), 'public', 'images', 'projects', localFilename);
-            const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-            const publicPath = isGitHubActions
-                ? `/portfolio-showcase/images/projects/${localFilename}`
-                : `/images/projects/${localFilename}`; // relative to public root
-
+            const localPublicAssetPath = path.join(process.cwd(), 'public', relativePath);
+            let hasLocalPublicAsset = false;
             try {
-                // Check if we already have it (optional: skip if exists, but for now we overwrite to update)
-                // Download from GitHub API (works for private repos)
-                const apiUrl = `https://api.github.com/repos/${repo.full_name}/contents/${relativePath}`;
+                await fs.access(localPublicAssetPath);
+                hasLocalPublicAsset = true;
+            } catch {
+                hasLocalPublicAsset = false;
+            }
+
+            if (finalMockup.startsWith('/images/') && hasLocalPublicAsset) {
+                // Keep the already-public path as-is for local/manual project art.
+                finalMockup = finalMockup;
+            } else {
+                const extension = path.extname(relativePath);
+                const localFilename = `${repo.name}-thumbnail${extension}`;
+                const localPath = path.join(process.cwd(), 'public', 'images', 'projects', localFilename);
+                const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+                const publicPath = isGitHubActions
+                    ? `/portfolio-showcase/images/projects/${localFilename}`
+                    : `/images/projects/${localFilename}`; // relative to public root
+
+                try {
+                    // Check if we already have it (optional: skip if exists, but for now we overwrite to update)
+                    // Download from GitHub API (works for private repos)
+                    const apiUrl = `https://api.github.com/repos/${repo.full_name}/contents/${relativePath}`;
                 const res = await fetch(apiUrl, {
                     headers: {
                         Authorization: `token ${GITHUB_TOKEN}`,
@@ -150,9 +165,10 @@ async function main() {
                     // Fallback: don't show broken image
                     finalMockup = null;
                 }
-            } catch (err) {
-                console.error(`Error processing thumbnail for ${repo.name}:`, err);
-                finalMockup = null;
+                } catch (err) {
+                    console.error(`Error processing thumbnail for ${repo.name}:`, err);
+                    finalMockup = null;
+                }
             }
         }
 

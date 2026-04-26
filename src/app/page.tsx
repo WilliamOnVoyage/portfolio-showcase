@@ -1,4 +1,6 @@
 
+'use client';
+
 import dynamic from "next/dynamic";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types";
@@ -6,6 +8,7 @@ import { Hero } from "@/components/Hero";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { motion } from "framer-motion";
 
 const BlackHoleBackground = dynamic(() => import("@/components/BlackHole").then(mod => mod.BlackHoleBackground), {
   ssr: false,
@@ -30,51 +33,73 @@ export default function Home() {
       <Hero />
       <ThemeSwitcher />
 
-      <div className="container mx-auto px-4 py-16 space-y-24">
+      <div className="container mx-auto px-4 py-16 space-y-32 z-10 relative">
         {/* Featured Section */}
         {featured.length > 0 && (
-          <section id="featured" className="space-y-8">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
-              <p className="text-muted-foreground">Detailed case studies of my most significant work.</p>
+          <motion.section
+            id="featured"
+            className="space-y-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="flex flex-col gap-2 border-l-4 border-primary pl-6">
+                <h2 className="text-sm font-mono tracking-widest text-primary uppercase">01 / Vanguard</h2>
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight">Featured Operations</h3>
+              <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Detailed tactical breakdowns of primary architecture and deployments.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {featured.map(p => (
                 <div key={p.id} className="md:col-span-1">
-                  {/* We can make featured cards bigger or styled differently here if needed. 
-                       For now, ProjectCard handles it nicely. */}
                   <ProjectCard project={p} />
                 </div>
               ))}
             </div>
-          </section>
+          </motion.section>
         )}
 
         {/* Professional Section */}
         {collab.length > 0 && (
-          <section id="collab" className="space-y-8">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-3xl font-bold tracking-tight">Professional Work & Research</h2>
-              <p className="text-muted-foreground">Collaborations, research suites, and organizational contributions.</p>
+          <motion.section
+            id="collab"
+            className="space-y-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="flex flex-col gap-2 border-l-4 border-secondary pl-6">
+              <h2 className="text-sm font-mono tracking-widest text-secondary uppercase">02 / Enterprise</h2>
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight">Professional Regiments</h3>
+              <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Joint-task force collaborations and managed infrastructure.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {collab.map(p => <ProjectCard key={p.id} project={p} />)}
             </div>
-          </section>
+          </motion.section>
         )}
 
         {/* Archive Section with Filter */}
-        <section id="archive" className="space-y-8">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-3xl font-bold tracking-tight">The Archive</h2>
-            <p className="text-muted-foreground">A complete list of repositories, experiments, and exercises.</p>
+        <motion.section
+          id="archive"
+          className="space-y-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="flex flex-col gap-2 border-l-4 border-white/20 pl-6">
+            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">03 / Database</h2>
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight">The Archive</h3>
+            <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Comprehensive system logs of all minor projects and exercises.</p>
           </div>
           <ProjectGrid projects={archive} />
-        </section>
+        </motion.section>
       </div>
 
-      <footer className="py-8 text-center text-sm text-muted-foreground border-t">
-        <p>© {new Date().getFullYear()} WilliamOnVoyage. All rights reserved.</p>
+      <footer className="py-12 text-center text-xs font-mono uppercase tracking-widest text-muted-foreground border-t border-white/10 relative z-10 glass-panel mt-32">
+        <p>SYSTEM.HALT // © {new Date().getFullYear()} WILLIAM_ON_VOYAGE. ALL DATA ENCRYPTED.</p>
       </footer>
     </main>
   );

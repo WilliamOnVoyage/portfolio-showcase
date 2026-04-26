@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 
-type ColorPalette = 'default' | 'ocean' | 'forest' | 'cyberpunk';
+type ColorPalette = 'default' | 'ocean' | 'forest' | 'cyberpunk' | 'eva';
 
 export function ThemeSwitcher() {
     // next-themes handles dark/light mode
     const { setTheme: setMode, resolvedTheme } = useTheme();
 
     // We handle color palette manually
-    const [palette, setPalette] = useState<ColorPalette>('default');
+    const [palette, setPalette] = useState<ColorPalette>('eva');
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 
@@ -25,6 +25,8 @@ export function ThemeSwitcher() {
         if (savedPalette) {
             setPalette(savedPalette);
             document.documentElement.setAttribute('data-theme', savedPalette);
+        } else {
+            document.documentElement.setAttribute('data-theme', 'eva');
         }
     }, []);
 
@@ -39,6 +41,7 @@ export function ThemeSwitcher() {
     };
 
     const palettes: { id: ColorPalette; label: string; color: string }[] = [
+        { id: 'eva', label: 'Neon Genesis', color: 'bg-red-600' },
         { id: 'default', label: 'Default', color: 'bg-zinc-500' },
         { id: 'ocean', label: 'Ocean', color: 'bg-sky-500' },
         { id: 'forest', label: 'Forest', color: 'bg-green-600' },

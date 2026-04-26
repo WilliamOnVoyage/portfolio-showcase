@@ -58,77 +58,77 @@ float fbm(vec3 p) {
 void main() {
     // Normalizing coordinates to center
     vec2 uv = vUv * 2.0 - 1.0;
-    
+
     // Distance from center
     float r = length(uv);
-    
+
     // Event Horizon Radius
     float bhRadius = 0.22;
     float eventHorizon = smoothstep(bhRadius, bhRadius - 0.01, r);
-    
+
     // Accretion Disk Physics Simulation (Visual Approximation)
-    // To fix the seam, we don't rely on raw atan(y,x). 
+    // To fix the seam, we don't rely on raw atan(y,x).
     // Instead, we rotate the coordinate space itself over time.
-    
+
     // Create a rotating coordinate system for the flow
     float rotationSpeed = 0.8;
     // The rotation increases closer to the black hole (conservation of angular momentum)
-    float twist = 4.0 / (r + 0.1); 
-    
+    float twist = 4.0 / (r + 0.1);
+
     float angle = uTime * rotationSpeed + twist;
     vec2 rotatedUV = rot2d(angle) * uv;
-    
+
     // We sample 3D noise using (x, y, time) to get seamless evolution + rotation
     // Strech the UVs along the flow direction to create streaks
     vec3 noisePos = vec3(rotatedUV * vec2(3.0, 0.5), uTime * 0.2);
-    
+
     // Additional twist for detail
     float n = fbm(noisePos);
-    
+
     // Sharpen noise for "plasma" look
-    n = pow(n, 3.0); 
-    
+    n = pow(n, 3.0);
+
     // Disk Gradient
     // Fade out at edges, sharp cut at horizon
-    float diskFade = smoothstep(1.2, bhRadius + 0.1, r); 
+    float diskFade = smoothstep(1.2, bhRadius + 0.1, r);
     float innerEdge = smoothstep(bhRadius, bhRadius + 0.05, r);
-    
-    // Color Palette - Matching Title Gradient (Blue-600 to Purple-600)
-    // Blue-600: #2563EB -> (0.145, 0.388, 0.921)
-    // Purple-600: #9333EA -> (0.576, 0.200, 0.917)
-    
+
+    // Color Palette - Neon Genesis Evangelion
+    // Cyan: (0.000, 0.639, 0.768)
+    // Red: (0.788, 0.133, 0.156)
+    // Orange: (1.000, 0.352, 0.000)
+
     vec3 colMsg = vec3(0.0);
-    
-    // Core (Photon Ring) - Bright Blue-White (Less intense to save text)
-    vec3 cCore = vec3(0.6, 0.8, 1.0) * 2.0;
-    
-    // Inner Disk - Bright White-Blue (The "Rim" effect)
-    // Mixing white with a slight touch of the title gradient blue
-    vec3 cInner = vec3(0.8, 0.9, 1.0) * 3.0;
-    
-    // Outer Disk - Purple 600 (Cooler/Further) stays mostly the same for contrast
-    vec3 cOuter = vec3(0.576, 0.200, 0.917); 
-    
+
+    // Core (Photon Ring) - Piercing Neon Cyan
+    vec3 cCore = vec3(0.0, 0.639, 0.768) * 3.0;
+
+    // Inner Disk - LCL Orange
+    vec3 cInner = vec3(1.0, 0.352, 0.0) * 2.5;
+
+    // Outer Disk - Soft White haze
+    vec3 cOuter = vec3(0.9, 0.95, 1.0) * 1.2;
+
     // Compose colors based on radius and noise intensity
     vec3 col = mix(cOuter, cInner, n * 2.0 * smoothstep(0.8, 0.3, r));
-    
+
     // Add the photon ring (bright thin circle)
     // "String-like" narrow but less blinding
     float photonRing = smoothstep(bhRadius + 0.005, bhRadius + 0.002, r);
     photonRing = pow(photonRing, 8.0); // Ultra-sharp curve
     col += cCore * photonRing * 8.0; // Reduced intensity (was 40.0)
-    
+
     // Apply noise texture mask
     // We want the disk to be "clumpy" but the photon ring to be stable
     col *= (n * 1.5 + 0.2); // Base brightness
-    
+
     // Apply geometric masks
     col *= diskFade;
     col *= innerEdge;
-    
+
     // Final Black Hole shadow
     col = mix(col, vec3(0.0), eventHorizon);
-    
+
     // Add gravitational lensing / star distortion (Subtle background glow)
     float glow = 0.05 / (r - bhRadius + 0.05);
     col += vec3(0.1, 0.2, 0.5) * glow * smoothstep(0.0, 0.5, r - bhRadius);

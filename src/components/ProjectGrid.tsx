@@ -23,16 +23,16 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
 
     return (
         <section className="space-y-8">
-            <div className="flex flex-wrap gap-2 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
                 {categories.map(category => (
                     <button
                         key={category}
                         onClick={() => setFilter(category)}
                         className={cn(
-                            "px-4 py-2 rounded-full text-sm font-medium transition-colors",
+                            "px-5 py-2 rounded-md font-mono text-xs uppercase tracking-widest transition-all",
                             filter === category
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-muted text-muted-foreground hover:bg-muted/80"
+                                ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(255,255,255,0.4)]"
+                                : "border border-white/20 text-muted-foreground hover:border-secondary hover:text-secondary hover:shadow-[0_0_15px_rgba(255,100,0,0.2)] bg-transparent"
                         )}
                     >
                         {category}

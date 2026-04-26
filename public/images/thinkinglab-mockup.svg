@@ -1,0 +1,65 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" rx="32" fill="#09090B"/>
+  <rect x="36" y="36" width="1128" height="603" rx="24" fill="#0F172A" stroke="#27272A" stroke-width="2"/>
+  <rect x="36" y="36" width="1128" height="64" rx="24" fill="#18181B"/>
+  <circle cx="75" cy="68" r="8" fill="#EF4444"/>
+  <circle cx="102" cy="68" r="8" fill="#F59E0B"/>
+  <circle cx="129" cy="68" r="8" fill="#22C55E"/>
+  <text x="174" y="76" fill="#F4F4F5" font-family="Inter, ui-sans-serif, system-ui" font-size="28" font-weight="700">Thinking<tspan fill="#3B82F6">Lab</tspan></text>
+  <text x="362" y="75" fill="#71717A" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Visual ML Model Builder</text>
+
+  <rect x="64" y="128" width="240" height="480" rx="18" fill="#18181B" stroke="#27272A"/>
+  <text x="88" y="166" fill="#A1A1AA" font-family="Inter, ui-sans-serif, system-ui" font-size="16" font-weight="700">Block Palette</text>
+  <g font-family="Inter, ui-sans-serif, system-ui" font-size="14" font-weight="600">
+    <rect x="88" y="194" width="192" height="48" rx="12" fill="#0B1220" stroke="#1D4ED8"/>
+    <text x="110" y="224" fill="#BFDBFE">CSV Dataset</text>
+    <rect x="88" y="258" width="192" height="48" rx="12" fill="#111827" stroke="#7C3AED"/>
+    <text x="110" y="288" fill="#DDD6FE">Conv2D Layer</text>
+    <rect x="88" y="322" width="192" height="48" rx="12" fill="#111827" stroke="#059669"/>
+    <text x="110" y="352" fill="#A7F3D0">ReLU</text>
+    <rect x="88" y="386" width="192" height="48" rx="12" fill="#111827" stroke="#DB2777"/>
+    <text x="110" y="416" fill="#FBCFE8">Backprop Path</text>
+  </g>
+
+  <rect x="336" y="128" width="528" height="480" rx="18" fill="#020617" stroke="#27272A"/>
+  <g stroke="#334155" stroke-width="1" opacity="0.45">
+    <path d="M376 168H824M376 228H824M376 288H824M376 348H824M376 408H824M376 468H824M376 528H824"/>
+    <path d="M396 148V588M456 148V588M516 148V588M576 148V588M636 148V588M696 148V588M756 148V588M816 148V588"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrowpink" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#EC4899"/>
+    </marker>
+  </defs>
+  <path d="M474 260 C530 220 570 220 626 260" stroke="#3B82F6" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M626 260 C682 300 722 300 778 260" stroke="#3B82F6" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M778 260 C722 420 570 420 474 260" stroke="#EC4899" stroke-width="4" opacity="0.9" marker-end="url(#arrowpink)"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui">
+    <rect x="398" y="220" width="112" height="80" rx="16" fill="#172554" stroke="#3B82F6" stroke-width="2"/>
+    <text x="426" y="254" fill="#DBEAFE" font-size="15" font-weight="700">Input</text>
+    <text x="414" y="278" fill="#93C5FD" font-size="12">[4,3,32,32]</text>
+    <rect x="598" y="220" width="112" height="80" rx="16" fill="#2E1065" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="626" y="254" fill="#EDE9FE" font-size="15" font-weight="700">Conv2D</text>
+    <text x="618" y="278" fill="#C4B5FD" font-size="12">18.9M FLOPs</text>
+    <rect x="754" y="220" width="112" height="80" rx="16" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+    <text x="786" y="254" fill="#D1FAE5" font-size="15" font-weight="700">ReLU</text>
+    <text x="778" y="278" fill="#A7F3D0" font-size="12">gradient: yes</text>
+  </g>
+
+  <rect x="896" y="128" width="240" height="480" rx="18" fill="#18181B" stroke="#27272A"/>
+  <text x="920" y="166" fill="#A1A1AA" font-family="Inter, ui-sans-serif, system-ui" font-size="16" font-weight="700">Properties</text>
+  <text x="920" y="210" fill="#F4F4F5" font-family="Inter, ui-sans-serif, system-ui" font-size="20" font-weight="800">Conv2D</text>
+  <text x="920" y="244" fill="#60A5FA" font-family="JetBrains Mono, monospace" font-size="14">input:  [4, 3, 32, 32]</text>
+  <text x="920" y="274" fill="#22D3EE" font-family="JetBrains Mono, monospace" font-size="14">output: [4, 32, 32, 32]</text>
+  <text x="920" y="332" fill="#A1A1AA" font-family="Inter, ui-sans-serif, system-ui" font-size="14">Params</text>
+  <rect x="920" y="354" width="184" height="42" rx="10" fill="#09090B" stroke="#27272A"/>
+  <text x="940" y="381" fill="#F4F4F5" font-family="JetBrains Mono, monospace" font-size="14">kernel_size = 3</text>
+  <rect x="920" y="410" width="184" height="42" rx="10" fill="#09090B" stroke="#27272A"/>
+  <text x="940" y="437" fill="#F4F4F5" font-family="JetBrains Mono, monospace" font-size="14">padding = 1</text>
+
+  <text x="336" y="638" fill="#71717A" font-family="Inter, ui-sans-serif, system-ui" font-size="15">Design • Validate • Simulate • Export PyTorch</text>
+</svg>

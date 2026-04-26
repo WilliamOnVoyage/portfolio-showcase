@@ -1,16 +1,20 @@
 {
   "CreditStack": {
-    "description": "Full-stack fintech application designed for credit card management and rewards optimization. Built with Next.js and TypeScript, featuring real-time data tracking and personalized recommendations.",
+    "description": "AI financial command center for credit-card rewards optimization. Tracks a user's wallet, rewards, credits, and card strategy with a conversational assistant and ROI dashboard.",
     "techStack": [
       "TypeScript",
       "Next.js",
       "React",
-      "PostgreSQL",
-      "Prisma"
+      "Prisma",
+      "SQLite",
+      "NextAuth",
+      "OpenAI API",
+      "Tailwind CSS"
     ],
-    "category": "FinTech & Crypto",
+    "category": "AI FinTech",
     "featured": true,
-    "mockup": "images/creditstack-mockup.png"
+    "mockup": "images/creditstack-mockup.png",
+    "longDescription": "CreditStack is a full-stack fintech product that helps users decide which card to use, track realized and potential value, manage credits and annual fees, and reason through rewards strategy with an AI assistant. The project combines a dashboard, wallet persistence, valuation logic, statement analysis, and AI function-calling to turn messy card benefits into an actionable command center."
   },
   "World-of-Warships-Stats-Analysis": {
     "featured": true,
@@ -23,16 +27,20 @@
     "hidden": true
   },
   "Dice-Dine": {
-    "description": "AI-powered dining recommendation engine leveraging GPT-4 for personalized suggestions based on user preferences and location data.",
+    "description": "AI dining concierge that turns natural-language cravings, constraints, and location intent into structured restaurant recommendations on an interactive map.",
     "techStack": [
-      "Python",
-      "OpenAI API",
-      "FastAPI",
-      "React"
+      "TypeScript",
+      "Next.js 15",
+      "React",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Leaflet",
+      "OpenAI API"
     ],
-    "category": "AI & Data Science",
+    "category": "Consumer AI",
     "featured": true,
-    "mockup": "/images/dicedine-mockup.png"
+    "mockup": "/images/dicedine-mockup.svg",
+    "longDescription": "Dice-Dine is a consumer AI product for restaurant discovery. Users describe what they want in plain language, and the app returns curated dining options with reasons, ratings context, addresses, and map-based visual discovery. It demonstrates conversational UX, structured AI output, authentication, and geospatial product design."
   },
   "CryptoX": {
     "description": "Quantitative analysis tool for cryptocurrency markets, providing real-time metrics and trend forecasting.",
@@ -230,5 +238,22 @@
   },
   "WoojiDataPrep": {
     "hidden": true
+  },
+  "ThinkingLab": {
+    "description": "Visual ML workbench for designing, validating, simulating, and exporting trainable model workflows.",
+    "techStack": [
+      "TypeScript",
+      "React",
+      "Vite",
+      "React Flow",
+      "Tailwind CSS",
+      "Express",
+      "Server-Sent Events",
+      "PyTorch"
+    ],
+    "category": "AI Developer Tools",
+    "featured": true,
+    "mockup": "/images/thinkinglab-mockup.svg",
+    "longDescription": "ThinkingLab is a visual machine-learning workbench that turns model architecture design into an interactive graph. Users drag data, preprocessing, model, activation, and loss blocks onto a canvas; connect them into workflows; inspect tensor shapes, dtypes, parameters, FLOPs, and validation errors; visualize forward and backward flow; then export runnable PyTorch code and stream local training logs through an Express/SSE backend."
   }
 }
