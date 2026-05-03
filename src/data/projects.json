@@ -12,7 +12,7 @@
     "is_private": false,
     "topics": [],
     "techStack": [],
-    "category": "Other",
+    "category": "AI & Automation",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -258,7 +258,7 @@
     "techStack": [
       "Jupyter Notebook"
     ],
-    "category": "Other",
+    "category": "FinTech & Crypto",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -283,7 +283,7 @@
     "techStack": [
       "Python"
     ],
-    "category": "Other",
+    "category": "Blockchain & Mining",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -306,7 +306,7 @@
     "is_private": false,
     "topics": [],
     "techStack": [],
-    "category": "Other",
+    "category": "Blockchain & Mining",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -331,7 +331,7 @@
     "techStack": [
       "Rust"
     ],
-    "category": "Other",
+    "category": "Blockchain & Mining",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -356,7 +356,7 @@
     "techStack": [
       "Shell"
     ],
-    "category": "Other",
+    "category": "Blockchain & Mining",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -409,7 +409,7 @@
     "techStack": [
       "Python"
     ],
-    "category": "Other",
+    "category": "AI & Automation",
     "featured": false,
     "mockup": null,
     "longDescription": null,
@@ -587,7 +587,7 @@
     "techStack": [
       "Python"
     ],
-    "category": "Other",
+    "category": "IoT & Automation",
     "featured": false,
     "mockup": null,
     "longDescription": null,

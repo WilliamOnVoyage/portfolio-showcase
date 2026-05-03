@@ -255,5 +255,29 @@
     "featured": true,
     "mockup": "/images/thinkinglab-mockup.svg",
     "longDescription": "ThinkingLab is a visual machine-learning workbench that turns model architecture design into an interactive graph. Users drag data, preprocessing, model, activation, and loss blocks onto a canvas; connect them into workflows; inspect tensor shapes, dtypes, parameters, FLOPs, and validation errors; visualize forward and backward flow; then export runnable PyTorch code and stream local training logs through an Express/SSE backend."
+  },
+  "AlphaMEV": {
+    "category": "Blockchain & Mining"
+  },
+  "ore-cli-custom": {
+    "category": "Blockchain & Mining"
+  },
+  "solfa": {
+    "category": "Blockchain & Mining"
+  },
+  "Ore-Miner": {
+    "category": "Blockchain & Mining"
+  },
+  "CowAgent": {
+    "category": "AI & Automation"
+  },
+  "DeepContext": {
+    "category": "AI & Automation"
+  },
+  "intelInv": {
+    "category": "FinTech & Crypto"
+  },
+  "Asgard": {
+    "category": "IoT & Automation"
   }
 }
