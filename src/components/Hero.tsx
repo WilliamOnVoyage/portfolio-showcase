@@ -2,9 +2,14 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { ArrowDown, Code2, Database, Cpu, Globe } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import projectsData from "@/data/projects.json";
+import { Project } from "@/types";
 
 export function Hero() {
+    const projects = projectsData as Project[];
+    const totalStars = projects.reduce((acc, p) => acc + (p.stargazers_count || 0), 0);
+
     return (
         <section className="min-h-[85vh] flex flex-col justify-center items-center w-full max-w-7xl mx-auto px-4 py-20 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 w-full h-full min-h-[500px]">
@@ -45,31 +50,58 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Tech Stack Ticker Box */}
+                {/* System Metrics Box */}
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center items-center group relative overflow-hidden"
+                    className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group"
                 >
-                    <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-4 absolute top-6 left-6">Vitals</h3>
-                    <div className="flex gap-4 items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-                        <Cpu className="w-8 h-8 opacity-80" />
-                        <Database className="w-8 h-8 opacity-80" />
-                        <Code2 className="w-8 h-8 opacity-80" />
+                    <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest absolute top-6 left-6">System Metrics</h3>
+                    <div className="mt-8 space-y-4 font-mono text-sm w-full">
+                        <div className="flex justify-between items-end border-b border-white/5 pb-2">
+                            <span className="text-muted-foreground text-xs uppercase">Deployments</span>
+                            <span className="text-primary font-bold text-lg leading-none">{projects.length}</span>
+                        </div>
+                        <div className="flex justify-between items-end border-b border-white/5 pb-2">
+                            <span className="text-muted-foreground text-xs uppercase">Impact (Stars)</span>
+                            <span className="text-primary font-bold text-lg leading-none">{totalStars}</span>
+                        </div>
+                        <div className="flex justify-between items-end">
+                            <span className="text-muted-foreground text-xs uppercase">Primary Logic</span>
+                            <span className="text-primary font-bold text-lg leading-none">Python/TS</span>
+                        </div>
                     </div>
                 </motion.div>
 
-                {/* Live Stat / Location Box */}
+                {/* Core Competencies Box */}
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center items-start relative overflow-hidden"
+                    className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden"
                 >
-                    <Globe className="absolute -bottom-4 -right-4 w-32 h-32 opacity-5 text-secondary" />
-                    <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-2">Location</span>
-                    <span className="text-xl font-bold">Earth<br/>Sector 01</span>
+                    <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest absolute top-6 left-6">Competencies</h3>
+                    <div className="mt-8 space-y-4 font-mono text-xs w-full">
+                        <div className="space-y-1.5">
+                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">ML Systems</span><span className="text-primary font-bold">95%</span></div>
+                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
+                                <motion.div initial={{ width: 0 }} whileInView={{ width: "95%" }} transition={{ duration: 1, delay: 0.5 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">Data Analytics</span><span className="text-primary font-bold">85%</span></div>
+                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
+                                <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} transition={{ duration: 1, delay: 0.6 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">Blockchain</span><span className="text-primary font-bold">80%</span></div>
+                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
+                                <motion.div initial={{ width: 0 }} whileInView={{ width: "80%" }} transition={{ duration: 1, delay: 0.7 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                            </div>
+                        </div>
+                    </div>
                 </motion.div>
 
                 {/* Bottom Status Bar (Wide spanning bottom row) */}
