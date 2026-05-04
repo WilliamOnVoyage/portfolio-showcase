@@ -1,6 +1,7 @@
 
 'use client';
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import projectsData from "@/data/projects.json";
@@ -9,6 +10,21 @@ import { Project } from "@/types";
 export function Hero() {
     const projects = projectsData as Project[];
     const totalStars = projects.reduce((acc, p) => acc + (p.stargazers_count || 0), 0);
+
+    const [sessionTime, setSessionTime] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setSessionTime(prev => prev + 1);
+        }, 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatTime = (seconds: number) => {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${m}:${s.toString().padStart(2, '0')}`;
+    };
 
     return (
         <section className="min-h-[85vh] flex flex-col justify-center items-center w-full max-w-7xl mx-auto px-4 py-20 relative z-10">
@@ -58,18 +74,22 @@ export function Hero() {
                     className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden group"
                 >
                     <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest absolute top-6 left-6">System Metrics</h3>
-                    <div className="mt-8 space-y-4 font-mono text-sm w-full">
-                        <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                            <span className="text-muted-foreground text-xs uppercase">Deployments</span>
-                            <span className="text-primary font-bold text-lg leading-none">{projects.length}</span>
+                    <div className="mt-8 space-y-3 font-mono text-sm w-full">
+                        <div className="flex justify-between items-end border-b border-white/5 pb-1">
+                            <span className="text-muted-foreground text-[10px] uppercase">Deployments</span>
+                            <span className="text-primary font-bold text-base leading-none">{projects.length}</span>
                         </div>
-                        <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                            <span className="text-muted-foreground text-xs uppercase">Impact (Stars)</span>
-                            <span className="text-primary font-bold text-lg leading-none">{totalStars}</span>
+                        <div className="flex justify-between items-end border-b border-white/5 pb-1">
+                            <span className="text-muted-foreground text-[10px] uppercase">Impact (Stars)</span>
+                            <span className="text-primary font-bold text-base leading-none">{totalStars}</span>
+                        </div>
+                        <div className="flex justify-between items-end border-b border-white/5 pb-1">
+                            <span className="text-muted-foreground text-[10px] uppercase">Session Time</span>
+                            <span className="text-primary font-bold text-base leading-none">{formatTime(sessionTime)}</span>
                         </div>
                         <div className="flex justify-between items-end">
-                            <span className="text-muted-foreground text-xs uppercase">Primary Logic</span>
-                            <span className="text-primary font-bold text-lg leading-none">Python/TS</span>
+                            <span className="text-muted-foreground text-[10px] uppercase">Primary Logic</span>
+                            <span className="text-primary font-bold text-base leading-none">Python/TS</span>
                         </div>
                     </div>
                 </motion.div>
