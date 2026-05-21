@@ -13,7 +13,7 @@
     ],
     "category": "AI FinTech",
     "featured": true,
-    "mockup": "images/creditstack-mockup.png",
+    "mockup": "/images/creditstack-mockup.png",
     "longDescription": "CreditStack is a full-stack fintech product that helps users decide which card to use, track realized and potential value, manage credits and annual fees, and reason through rewards strategy with an AI assistant. The project combines a dashboard, wallet persistence, valuation logic, statement analysis, and AI function-calling to turn messy card benefits into an actionable command center."
   },
   "World-of-Warships-Stats-Analysis": {

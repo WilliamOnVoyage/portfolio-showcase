@@ -15,7 +15,7 @@ The `PORTFOLIO.json` schema:
   "publicDescription": "String. Markdown supported. Detailed explanation.",
   "demoUrl": "String. URL to a video or demo.",
   "liveUrl": "String. URL to the deployed application.",
-  "thumbnail": "String. Path to image (e.g. /images/demo.png)."
+  "thumbnail": "String. Path to product logo (e.g. /images/demo.png)."
 }
 ```
 
