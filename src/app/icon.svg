@@ -1,9 +1,6 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Container (Guarantees high-contrast visibility on both light and dark browser tab bars) -->
-  <rect width="512" height="512" fill="#070B0E"/>
-  
   <defs>
-    <!-- Static gradients matching the slate/Thinking Lab aesthetic -->
+    <!-- Gradients matching the slate/Thinking Lab aesthetic -->
     <linearGradient id="topArchGrad" x1="56" y1="60" x2="456" y2="60" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#F1F5F9"/>
@@ -22,22 +19,35 @@
     </linearGradient>
   </defs>
 
-  <!-- Connections (Thicker 16px lines for high visibility at small sizes) -->
+  <!-- 1. Background Outlines (Drawn first to sit behind the foreground) -->
+  <path d="M 56 60 Q 256 120 456 60" stroke="#0F172A" stroke-width="28" fill="none"/>
+  <path d="M 56 452 Q 256 392 456 452" stroke="#0F172A" stroke-width="28" fill="none"/>
+  <line x1="176" y1="85" x2="176" y2="427" stroke="#0F172A" stroke-width="28"/>
+  <line x1="336" y1="85" x2="336" y2="427" stroke="#0F172A" stroke-width="28"/>
+  
+  <circle cx="56" cy="60" r="26" fill="#0F172A"/>
+  <circle cx="456" cy="60" r="26" fill="#0F172A"/>
+  <circle cx="56" cy="452" r="26" fill="#0F172A"/>
+  <circle cx="456" cy="452" r="26" fill="#0F172A"/>
+
+  <circle cx="176" cy="85" r="38" fill="#0F172A"/>
+  <circle cx="336" cy="85" r="38" fill="#0F172A"/>
+  <circle cx="176" cy="427" r="38" fill="#0F172A"/>
+  <circle cx="336" cy="427" r="38" fill="#0F172A"/>
+
+  <!-- 2. Foreground Constellation (Overlayed on top) -->
   <path d="M 56 60 Q 256 120 456 60" stroke="url(#topArchGrad)" stroke-width="16" fill="none"/>
   <path d="M 56 452 Q 256 392 456 452" stroke="url(#bottomArchGrad)" stroke-width="16" fill="none"/>
-  
   <line x1="176" y1="85" x2="176" y2="427" stroke="url(#leftPillarGrad)" stroke-width="16"/>
   <line x1="336" y1="85" x2="336" y2="427" stroke="url(#rightPillarGrad)" stroke-width="16"/>
 
-  <!-- Endpoints (4 small dots, radius 20px) -->
-  <circle cx="56" cy="60" r="20" fill="#60A5FA" stroke="#070B0E" stroke-width="3"/>
-  <circle cx="456" cy="60" r="20" fill="#F1F5F9" stroke="#070B0E" stroke-width="3"/>
-  <circle cx="56" cy="452" r="20" fill="#F1F5F9" stroke="#070B0E" stroke-width="3"/>
-  <circle cx="456" cy="452" r="20" fill="#60A5FA" stroke="#070B0E" stroke-width="3"/>
+  <circle cx="56" cy="60" r="20" fill="#60A5FA"/>
+  <circle cx="456" cy="60" r="20" fill="#F1F5F9"/>
+  <circle cx="56" cy="452" r="20" fill="#F1F5F9"/>
+  <circle cx="456" cy="452" r="20" fill="#60A5FA"/>
 
-  <!-- Connection Points (4 larger dots, radius 32px) -->
-  <circle cx="176" cy="85" r="32" fill="#60A5FA" stroke="#070B0E" stroke-width="4"/>
-  <circle cx="336" cy="85" r="32" fill="#F1F5F9" stroke="#070B0E" stroke-width="4"/>
-  <circle cx="176" cy="427" r="32" fill="#F1F5F9" stroke="#070B0E" stroke-width="4"/>
-  <circle cx="336" cy="427" r="32" fill="#60A5FA" stroke="#070B0E" stroke-width="4"/>
+  <circle cx="176" cy="85" r="32" fill="#60A5FA"/>
+  <circle cx="336" cy="85" r="32" fill="#F1F5F9"/>
+  <circle cx="176" cy="427" r="32" fill="#F1F5F9"/>
+  <circle cx="336" cy="427" r="32" fill="#60A5FA"/>
 </svg>
