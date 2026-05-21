@@ -1,43 +1,40 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="512" height="512" fill="#070B0E"/>
-  
   <defs>
     <!-- Gradients matching the slate/Thinking Lab aesthetic -->
-    <linearGradient id="topArchGrad" x1="143" y1="148" x2="369" y2="148" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="100%" stop-color="#E2E8F0"/>
+    <linearGradient id="topArchGrad" x1="56" y1="60" x2="456" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
     </linearGradient>
-    <linearGradient id="bottomArchGrad" x1="143" y1="364" x2="369" y2="364" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#E2E8F0"/>
-      <stop offset="100%" stop-color="#93C5FD"/>
+    <linearGradient id="bottomArchGrad" x1="56" y1="452" x2="456" y2="452" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
     </linearGradient>
-    <linearGradient id="leftPillarGrad" x1="211" y1="162" x2="211" y2="350" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="100%" stop-color="#E2E8F0"/>
+    <linearGradient id="leftPillarGrad" x1="176" y1="85" x2="176" y2="427" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
     </linearGradient>
-    <linearGradient id="rightPillarGrad" x1="301" y1="162" x2="301" y2="350" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#E2E8F0"/>
-      <stop offset="100%" stop-color="#93C5FD"/>
+    <linearGradient id="rightPillarGrad" x1="336" y1="85" x2="336" y2="427" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
     </linearGradient>
   </defs>
 
-  <!-- Connections (Thin, 1.5px lines, balanced mid-point proportions) -->
-  <path d="M 143 148 Q 256 182 369 148" stroke="url(#topArchGrad)" stroke-width="1.5" fill="none"/>
-  <path d="M 143 364 Q 256 330 369 364" stroke="url(#bottomArchGrad)" stroke-width="1.5" fill="none"/>
+  <!-- Connections (Thicker 16px lines for high visibility at small sizes) -->
+  <path d="M 56 60 Q 256 120 456 60" stroke="url(#topArchGrad)" stroke-width="16" fill="none"/>
+  <path d="M 56 452 Q 256 392 456 452" stroke="url(#bottomArchGrad)" stroke-width="16" fill="none"/>
   
-  <line x1="211" y1="162" x2="211" y2="350" stroke="url(#leftPillarGrad)" stroke-width="1.5"/>
-  <line x1="301" y1="162" x2="301" y2="350" stroke="url(#rightPillarGrad)" stroke-width="1.5"/>
+  <line x1="176" y1="85" x2="176" y2="427" stroke="url(#leftPillarGrad)" stroke-width="16"/>
+  <line x1="336" y1="85" x2="336" y2="427" stroke="url(#rightPillarGrad)" stroke-width="16"/>
 
-  <!-- Endpoints (4 small dots, radius 6px) -->
-  <circle cx="143" cy="148" r="6" fill="#93C5FD" stroke="#070B0E" stroke-width="1.5"/>
-  <circle cx="369" cy="148" r="6" fill="#E2E8F0" stroke="#070B0E" stroke-width="1.5"/>
-  <circle cx="143" cy="364" r="6" fill="#E2E8F0" stroke="#070B0E" stroke-width="1.5"/>
-  <circle cx="369" cy="364" r="6" fill="#93C5FD" stroke="#070B0E" stroke-width="1.5"/>
+  <!-- Endpoints (4 small dots, radius 20px) -->
+  <circle cx="56" cy="60" r="20" fill="#60A5FA"/>
+  <circle cx="456" cy="60" r="20" fill="#F1F5F9"/>
+  <circle cx="56" cy="452" r="20" fill="#F1F5F9"/>
+  <circle cx="456" cy="452" r="20" fill="#60A5FA"/>
 
-  <!-- Connection Points (4 larger dots, radius 11px) -->
-  <circle cx="211" cy="162" r="11" fill="#93C5FD" stroke="#070B0E" stroke-width="2"/>
-  <circle cx="301" cy="162" r="11" fill="#E2E8F0" stroke="#070B0E" stroke-width="2"/>
-  <circle cx="211" cy="350" r="11" fill="#E2E8F0" stroke="#070B0E" stroke-width="2"/>
-  <circle cx="301" cy="350" r="11" fill="#93C5FD" stroke="#070B0E" stroke-width="2"/>
+  <!-- Connection Points (4 larger dots, radius 32px) -->
+  <circle cx="176" cy="85" r="32" fill="#60A5FA"/>
+  <circle cx="336" cy="85" r="32" fill="#F1F5F9"/>
+  <circle cx="176" cy="427" r="32" fill="#F1F5F9"/>
+  <circle cx="336" cy="427" r="32" fill="#60A5FA"/>
 </svg>
