@@ -1,35 +1,24 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    :root {
-      /* Light mode defaults: high-contrast dark blue and slate */
-      --color-cyan: #1D4ED8;
-      --color-slate: #475569;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        /* Dark mode overrides: glowing neon blue and clean off-white */
-        --color-cyan: #60A5FA;
-        --color-slate: #F1F5F9;
-      }
-    }
-  </style>
-
+  <!-- Background Container (Guarantees high-contrast visibility on both light and dark browser tab bars) -->
+  <rect width="512" height="512" fill="#070B0E"/>
+  
   <defs>
+    <!-- Static gradients matching the slate/Thinking Lab aesthetic -->
     <linearGradient id="topArchGrad" x1="56" y1="60" x2="456" y2="60" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="var(--color-cyan)"/>
-      <stop offset="100%" stop-color="var(--color-slate)"/>
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
     </linearGradient>
     <linearGradient id="bottomArchGrad" x1="56" y1="452" x2="456" y2="452" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="var(--color-slate)"/>
-      <stop offset="100%" stop-color="var(--color-cyan)"/>
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
     </linearGradient>
     <linearGradient id="leftPillarGrad" x1="176" y1="85" x2="176" y2="427" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="var(--color-cyan)"/>
-      <stop offset="100%" stop-color="var(--color-slate)"/>
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
     </linearGradient>
     <linearGradient id="rightPillarGrad" x1="336" y1="85" x2="336" y2="427" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="var(--color-slate)"/>
-      <stop offset="100%" stop-color="var(--color-cyan)"/>
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
     </linearGradient>
   </defs>
 
@@ -41,14 +30,14 @@
   <line x1="336" y1="85" x2="336" y2="427" stroke="url(#rightPillarGrad)" stroke-width="16"/>
 
   <!-- Endpoints (4 small dots, radius 20px) -->
-  <circle cx="56" cy="60" r="20" fill="var(--color-cyan)"/>
-  <circle cx="456" cy="60" r="20" fill="var(--color-slate)"/>
-  <circle cx="56" cy="452" r="20" fill="var(--color-slate)"/>
-  <circle cx="456" cy="452" r="20" fill="var(--color-cyan)"/>
+  <circle cx="56" cy="60" r="20" fill="#60A5FA" stroke="#070B0E" stroke-width="3"/>
+  <circle cx="456" cy="60" r="20" fill="#F1F5F9" stroke="#070B0E" stroke-width="3"/>
+  <circle cx="56" cy="452" r="20" fill="#F1F5F9" stroke="#070B0E" stroke-width="3"/>
+  <circle cx="456" cy="452" r="20" fill="#60A5FA" stroke="#070B0E" stroke-width="3"/>
 
   <!-- Connection Points (4 larger dots, radius 32px) -->
-  <circle cx="176" cy="85" r="32" fill="var(--color-cyan)"/>
-  <circle cx="336" cy="85" r="32" fill="var(--color-slate)"/>
-  <circle cx="176" cy="427" r="32" fill="var(--color-slate)"/>
-  <circle cx="336" cy="427" r="32" fill="var(--color-cyan)"/>
+  <circle cx="176" cy="85" r="32" fill="#60A5FA" stroke="#070B0E" stroke-width="4"/>
+  <circle cx="336" cy="85" r="32" fill="#F1F5F9" stroke="#070B0E" stroke-width="4"/>
+  <circle cx="176" cy="427" r="32" fill="#F1F5F9" stroke="#070B0E" stroke-width="4"/>
+  <circle cx="336" cy="427" r="32" fill="#60A5FA" stroke="#070B0E" stroke-width="4"/>
 </svg>
