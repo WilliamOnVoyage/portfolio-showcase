@@ -24,9 +24,6 @@ export default function Home() {
   // Define Featured Projects explicitly via override `featured: true` or manual check
   const featured = projects.filter(p => p.featured);
 
-  // Professional / Org projects
-  const collab = projects.filter(p => p.category === "Professional Collaboration" || p.category === "Project Aegis Suite");
-
   // The rest (Archive)
   const archive = projects.filter(p => !p.featured && p.category !== "Professional Collaboration" && p.category !== "Project Aegis Suite");
 
