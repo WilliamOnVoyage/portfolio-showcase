@@ -167,5 +167,6 @@
   "DeepContext": { "hidden": true },
   "intelInv": { "hidden": true },
   "Asgard": { "hidden": true },
-  "rust-programming-course": { "hidden": true }
+  "rust-programming-course": { "hidden": true },
+  "job-hunt-agent": { "hidden": true }
 }
