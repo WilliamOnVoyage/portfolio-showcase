@@ -1,0 +1,30 @@
+{
+  "Comment": "Add GitHub Pages A and CNAME records",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "moliang.ai",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "185.199.108.153" },
+          { "Value": "185.199.109.153" },
+          { "Value": "185.199.110.153" },
+          { "Value": "185.199.111.153" }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "www.moliang.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          { "Value": "williamonvoyage.github.io" }
+        ]
+      }
+    }
+  ]
+}
