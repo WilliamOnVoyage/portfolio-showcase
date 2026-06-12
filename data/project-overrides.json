@@ -1,244 +1,4 @@
 {
-  "CreditStack": {
-    "description": "AI financial command center for credit-card rewards optimization. Tracks a user's wallet, rewards, credits, and card strategy with a conversational assistant and ROI dashboard.",
-    "techStack": [
-      "TypeScript",
-      "Next.js",
-      "React",
-      "Prisma",
-      "SQLite",
-      "NextAuth",
-      "OpenAI API",
-      "Tailwind CSS"
-    ],
-    "category": "AI FinTech",
-    "featured": true,
-    "mockup": "/images/creditstack-mockup.png",
-    "longDescription": "CreditStack is a full-stack fintech product that helps users decide which card to use, track realized and potential value, manage credits and annual fees, and reason through rewards strategy with an AI assistant. The project combines a dashboard, wallet persistence, valuation logic, statement analysis, and AI function-calling to turn messy card benefits into an actionable command center."
-  },
-  "World-of-Warships-Stats-Analysis": {
-    "featured": true,
-    "category": "Other"
-  },
-  "portfolio-showcase": {
-    "hidden": true
-  },
-  "VibeCodingTemplate": {
-    "hidden": true
-  },
-  "Dice-Dine": {
-    "description": "AI dining concierge that turns natural-language cravings, constraints, and location intent into structured restaurant recommendations on an interactive map.",
-    "techStack": [
-      "TypeScript",
-      "Next.js 15",
-      "React",
-      "NextAuth.js",
-      "Tailwind CSS",
-      "Leaflet",
-      "OpenAI API"
-    ],
-    "category": "Consumer AI",
-    "featured": true,
-    "mockup": "/images/dicedine-mockup.svg",
-    "longDescription": "Dice-Dine is a consumer AI product for restaurant discovery. Users describe what they want in plain language, and the app returns curated dining options with reasons, ratings context, addresses, and map-based visual discovery. It demonstrates conversational UX, structured AI output, authentication, and geospatial product design."
-  },
-  "CryptoX": {
-    "description": "Quantitative analysis tool for cryptocurrency markets, providing real-time metrics and trend forecasting.",
-    "techStack": [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Matplotlib"
-    ],
-    "category": "FinTech & Crypto"
-  },
-  "intelinv": {
-    "description": "Intelligent Investment analysis platform.",
-    "techStack": [
-      "Python",
-      "Data Science"
-    ],
-    "category": "FinTech & Crypto"
-  },
-  "GoldDigger": {
-    "description": "Advanced data mining and financial analysis tool for identifying market opportunities.",
-    "techStack": [
-      "Python",
-      "Scrapy",
-      "Financial APIs"
-    ],
-    "featured": true,
-    "category": "FinTech & Crypto"
-  },
-  "Wooji-Web": {
-    "hidden": true,
-    "description": "Web interface for Wooji Capital's asset management system.",
-    "techStack": [
-      "React",
-      "TypeScript",
-      "Node.js"
-    ],
-    "category": "Professional Collaboration"
-  },
-  "EquityFactorModel": {
-    "description": "Sophisticated financial modeling system for equity factor analysis.",
-    "techStack": [
-      "Python",
-      "Quantitative Finance"
-    ],
-    "category": "Professional Collaboration"
-  },
-  "WoojiDatabase": {
-    "description": "Core database infrastructure for Wooji Capital.",
-    "techStack": [
-      "SQL",
-      "Python"
-    ],
-    "category": "Professional Collaboration",
-    "hidden": true
-  },
-  "GameAegis": {
-    "description": "Data collection agent for online game analytics, part of the Project Aegis suite.",
-    "techStack": [
-      "Python",
-      "AsyncIO"
-    ],
-    "category": "Project Aegis Suite"
-  },
-  "AegisTensor": {
-    "description": "Deep learning modeling package for the Aegis analytics suite.",
-    "techStack": [
-      "Python",
-      "TensorFlow",
-      "Keras"
-    ],
-    "category": "Project Aegis Suite"
-  },
-  "Aegis-Loki": {
-    "description": "Regional analytics module for Project Aegis.",
-    "category": "Project Aegis Suite"
-  },
-  "Aegis-Metro": {
-    "description": "Metropolitan data analysis module for Project Aegis.",
-    "category": "Project Aegis Suite"
-  },
-  "Aegis-Sovereign": {
-    "description": "Sovereign state analytics module for Project Aegis.",
-    "category": "Project Aegis Suite"
-  },
-  "VIT-PLA": {
-    "description": "Visual Interactive Tool for Process Log Analysis.",
-    "techStack": [
-      "Java",
-      "Visualization"
-    ],
-    "category": "AI & Data Science",
-    "hidden": true
-  },
-  "sequence_gan": {
-    "description": "Generative Adversarial Networks for sequence generation.",
-    "techStack": [
-      "Python",
-      "TensorFlow",
-      "GANs"
-    ],
-    "category": "AI & Data Science",
-    "hidden": true
-  },
-  "keras-attention-mechanism": {
-    "description": "Implementation of attention mechanisms for Keras models.",
-    "techStack": [
-      "Python",
-      "Keras",
-      "Deep Learning"
-    ],
-    "category": "AI & Data Science",
-    "hidden": true
-  },
-  "SCOT-99": {
-    "hidden": true
-  },
-  "horovod": {
-    "hidden": true
-  },
-  "RL-DL-Based-Sequence-Prediction": {
-    "hidden": true
-  },
-  "SeqGAN": {
-    "hidden": true
-  },
-  "VITPLA-WEB": {
-    "hidden": true
-  },
-  "gym": {
-    "hidden": true
-  },
-  "AutoSampling": {
-    "hidden": true
-  },
-  "RLWorkflow": {
-    "hidden": true
-  },
-  "PersonalWeb": {
-    "hidden": true
-  },
-  "TensorFlow-Examples": {
-    "hidden": true
-  },
-  "C-Fraction-Class": {
-    "hidden": true
-  },
-  "Private-Repository-Summary": {
-    "hidden": true
-  },
-  "ActivityPrediction_TF": {
-    "hidden": true
-  },
-  "PacMan-and-Flappy-bird-with-Reinforcement-Learning": {
-    "hidden": true
-  },
-  "Pattern_Recognition": {
-    "hidden": true
-  },
-  "ActivityPrediction_Mat_Visual": {
-    "hidden": true
-  },
-  "VIT-PLA_AlignmentEvaluation": {
-    "hidden": true
-  },
-  "VIT-PLA_Alignment": {
-    "hidden": true
-  },
-  "deeplearning": {
-    "hidden": true
-  },
-  "SVM_analysis_tool": {
-    "hidden": true
-  },
-  "AIM2_DataPrePro": {
-    "hidden": true
-  },
-  "XDBIO_Master": {
-    "hidden": true
-  },
-  "HMM_stats": {
-    "hidden": true
-  },
-  "NeuralNetwork": {
-    "hidden": true
-  },
-  "ICHI_HMM": {
-    "hidden": true
-  },
-  "LeetCode": {
-    "hidden": true
-  },
-  "XDBIO_Client": {
-    "hidden": true
-  },
-  "WoojiDataPrep": {
-    "hidden": true
-  },
   "ThinkingLab": {
     "description": "Visual ML workbench for designing, validating, simulating, and exporting trainable model workflows.",
     "techStack": [
@@ -254,30 +14,158 @@
     "category": "AI Developer Tools",
     "featured": true,
     "mockup": "/images/thinkinglab-mockup.svg",
-    "longDescription": "ThinkingLab is a visual machine-learning workbench that turns model architecture design into an interactive graph. Users drag data, preprocessing, model, activation, and loss blocks onto a canvas; connect them into workflows; inspect tensor shapes, dtypes, parameters, FLOPs, and validation errors; visualize forward and backward flow; then export runnable PyTorch code and stream local training logs through an Express/SSE backend."
+    "longDescription": "ThinkingLab is a visual machine-learning workbench that turns model architecture design into an interactive graph. Users drag data, preprocessing, model, activation, and loss blocks onto a canvas; connect them into workflows; inspect tensor shapes, dtypes, parameters, FLOPs, and validation errors; visualize forward and backward flow; then export runnable PyTorch code and stream local training logs through an Express/SSE backend.",
+    "architecture": "React frontend using React Flow for canvas management, communicating via Server-Sent Events (SSE) with an Express Node.js backend to stream PyTorch training logs in real-time.",
+    "keyChallenges": [
+      "Implemented a custom shape-inference algorithm to validate tensor dimensions across connected graph nodes before code export.",
+      "Managed complex, deeply nested application state using Zustand, ensuring 60fps rendering even with hundreds of nodes."
+    ],
+    "metrics": [
+      "Supports graphs with 500+ nodes and edges without frame drops.",
+      "Reduces PyTorch boilerplate code generation time from hours to seconds."
+    ]
   },
-  "AlphaMEV": {
-    "category": "Blockchain & Mining"
+  "CreditStack": {
+    "description": "AI financial command center for credit-card rewards optimization. Tracks a user's wallet, rewards, credits, and card strategy with a conversational assistant and ROI dashboard.",
+    "techStack": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Prisma",
+      "SQLite",
+      "NextAuth",
+      "OpenAI API",
+      "Tailwind CSS"
+    ],
+    "category": "AI FinTech",
+    "featured": true,
+    "mockup": "/images/creditstack-mockup.png",
+    "longDescription": "CreditStack is a full-stack fintech product that helps users decide which card to use, track realized and potential value, manage credits and annual fees, and reason through rewards strategy with an AI assistant. The project combines a dashboard, wallet persistence, valuation logic, statement analysis, and AI function-calling to turn messy card benefits into an actionable command center.",
+    "architecture": "Next.js App Router for server-rendered React components. Data is managed through Prisma ORM to SQLite. Integrates OpenAI API with custom function calling to interface with the user's financial database.",
+    "keyChallenges": [
+      "Engineered an AI agent using OpenAI function calling that can securely query the user's local SQLite database to answer complex queries.",
+      "Built a robust PDF parsing pipeline to extract structured transaction data from messy credit card statements."
+    ],
+    "metrics": [
+      "AI Assistant latency reduced by 40% through edge streaming.",
+      "Accurately parses 98% of standard credit card PDF statements."
+    ]
   },
-  "ore-cli-custom": {
-    "category": "Blockchain & Mining"
+  "Dice-Dine": {
+    "description": "AI dining concierge that turns natural-language cravings, constraints, and location intent into structured restaurant recommendations on an interactive map.",
+    "techStack": [
+      "TypeScript",
+      "Next.js 15",
+      "React",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Leaflet",
+      "OpenAI API"
+    ],
+    "category": "Consumer AI",
+    "featured": true,
+    "mockup": "/images/dicedine-mockup.svg",
+    "longDescription": "Dice-Dine is a consumer AI product for restaurant discovery. Users describe what they want in plain language, and the app returns curated dining options with reasons, ratings context, addresses, and map-based visual discovery. It demonstrates conversational UX, structured AI output, authentication, and geospatial product design.",
+    "architecture": "Next.js 15 providing a conversational interface. User queries are translated into structured schema via LLM, then mapped using Leaflet.js with dynamic marker generation.",
+    "keyChallenges": [
+      "Enforced strict JSON schema outputs from the LLM to ensure map markers never crash due to hallucinatory coordinates."
+    ],
+    "metrics": []
   },
-  "solfa": {
-    "category": "Blockchain & Mining"
+  "World-of-Warships-Stats-Analysis": {
+    "description": "Data acquisition, modeling, and analysis pipeline for predicting player performance in World of Warships.",
+    "featured": true,
+    "category": "Data Science",
+    "architecture": "Python data ingestion pipeline hitting Wargaming APIs, storing raw JSON logs into a SQL database for offline analysis using Pandas and Scikit-learn.",
+    "keyChallenges": [
+      "Reverse-engineered undocumented API endpoints to extract comprehensive match-level telemetry.",
+      "Handled rate-limiting and exponential backoff across millions of API requests during backfilling."
+    ],
+    "metrics": [
+      "Ingested and analyzed over 1TB of raw player match data.",
+      "Trained a predictive model achieving 75% accuracy on match outcomes based on pre-game stats."
+    ]
   },
-  "Ore-Miner": {
-    "category": "Blockchain & Mining"
+  "intelinv": {
+    "description": "Intelligent Investment analysis platform. (Co-authored professional collaboration with my wife).",
+    "techStack": [
+      "TypeScript",
+      "Python",
+      "Data Science"
+    ],
+    "category": "FinTech & Crypto",
+    "featured": true,
+    "architecture": "TypeScript frontend communicating with a Python data science backend. The backend utilizes Pandas for quantitative analysis of financial time-series data.",
+    "keyChallenges": [
+      "Synchronized state between a complex interactive TypeScript UI and long-running Python quantitative jobs.",
+      "Collaborated across disciplines (frontend engineering and quantitative finance) to build a cohesive product."
+    ],
+    "metrics": []
   },
-  "CowAgent": {
-    "category": "AI & Automation"
+  "Project Aegis (Suite)": {
+    "hidden": true
   },
-  "DeepContext": {
-    "category": "AI & Automation"
-  },
-  "intelInv": {
+  "GoldDigger": {
+    "description": "Advanced data mining and financial analysis tool for identifying market opportunities.",
+    "techStack": [
+      "Python",
+      "Scrapy",
+      "Financial APIs"
+    ],
+    "featured": true,
     "category": "FinTech & Crypto"
   },
-  "Asgard": {
-    "category": "IoT & Automation"
-  }
+  "EquityFactorModel": {
+    "hidden": true
+  },
+  "GameAegis": { "hidden": true },
+  "AegisTensor": { "hidden": true },
+  "Aegis-Loki": { "hidden": true },
+  "Aegis-Metro": { "hidden": true },
+  "Aegis-Sovereign": { "hidden": true },
+  "portfolio-showcase": { "hidden": true },
+  "VibeCodingTemplate": { "hidden": true },
+  "CryptoX": { "hidden": true },
+  "Wooji-Web": { "hidden": true },
+  "WoojiDatabase": { "hidden": true },
+  "VIT-PLA": { "hidden": true },
+  "sequence_gan": { "hidden": true },
+  "keras-attention-mechanism": { "hidden": true },
+  "SCOT-99": { "hidden": true },
+  "horovod": { "hidden": true },
+  "RL-DL-Based-Sequence-Prediction": { "hidden": true },
+  "SeqGAN": { "hidden": true },
+  "VITPLA-WEB": { "hidden": true },
+  "gym": { "hidden": true },
+  "AutoSampling": { "hidden": true },
+  "RLWorkflow": { "hidden": true },
+  "PersonalWeb": { "hidden": true },
+  "TensorFlow-Examples": { "hidden": true },
+  "C-Fraction-Class": { "hidden": true },
+  "Private-Repository-Summary": { "hidden": true },
+  "ActivityPrediction_TF": { "hidden": true },
+  "PacMan-and-Flappy-bird-with-Reinforcement-Learning": { "hidden": true },
+  "Pattern_Recognition": { "hidden": true },
+  "ActivityPrediction_Mat_Visual": { "hidden": true },
+  "VIT-PLA_AlignmentEvaluation": { "hidden": true },
+  "VIT-PLA_Alignment": { "hidden": true },
+  "deeplearning": { "hidden": true },
+  "SVM_analysis_tool": { "hidden": true },
+  "AIM2_DataPrePro": { "hidden": true },
+  "XDBIO_Master": { "hidden": true },
+  "HMM_stats": { "hidden": true },
+  "NeuralNetwork": { "hidden": true },
+  "ICHI_HMM": { "hidden": true },
+  "LeetCode": { "hidden": true },
+  "XDBIO_Client": { "hidden": true },
+  "WoojiDataPrep": { "hidden": true },
+  "AlphaMEV": { "hidden": true },
+  "ore-cli-custom": { "hidden": true },
+  "solfa": { "hidden": true },
+  "Ore-Miner": { "hidden": true },
+  "CowAgent": { "hidden": true },
+  "DeepContext": { "hidden": true },
+  "intelInv": { "hidden": true },
+  "Asgard": { "hidden": true },
+  "rust-programming-course": { "hidden": true }
 }

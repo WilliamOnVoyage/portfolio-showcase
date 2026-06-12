@@ -181,6 +181,7 @@ async function main() {
             language: repo.language,
             stargazers_count: repo.stargazers_count,
             forks_count: repo.forks_count,
+            open_issues_count: repo.open_issues_count || 0,
             updated_at: repo.updated_at,
             is_private: isPrivate,
             topics: repo.topics || [],
@@ -191,6 +192,10 @@ async function main() {
             mockup: finalMockup,
             longDescription: contract.publicDescription || override.longDescription || null,
             hidden: isHidden,
+
+            architecture: override.architecture || null,
+            keyChallenges: override.keyChallenges || [],
+            metrics: override.metrics || [],
 
             tagline: contract.tagline || null,
             demoUrl: contract.demoUrl || null,
@@ -220,6 +225,7 @@ async function main() {
                 language: null,
                 stargazers_count: 0,
                 forks_count: 0,
+                open_issues_count: 0,
                 updated_at: new Date().toISOString(), // No real date
                 is_private: true,
                 topics: [],
@@ -229,6 +235,10 @@ async function main() {
                 mockup: override.mockup || null,
                 longDescription: override.longDescription || null,
                 hidden: false,
+
+                architecture: override.architecture || null,
+                keyChallenges: override.keyChallenges || [],
+                metrics: override.metrics || [],
 
                 tagline: null,
                 demoUrl: null,

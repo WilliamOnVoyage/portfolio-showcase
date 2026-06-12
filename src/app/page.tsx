@@ -9,6 +9,9 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { motion } from "framer-motion";
+import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { PublicationsList } from "@/components/PublicationsList";
+import { NavBar } from "@/components/NavBar";
 
 const BlackHoleBackground = dynamic(() => import("@/components/BlackHole").then(mod => mod.BlackHoleBackground), {
   ssr: false,
@@ -28,7 +31,8 @@ export default function Home() {
   const archive = projects.filter(p => !p.featured && p.category !== "Professional Collaboration" && p.category !== "Project Aegis Suite");
 
   return (
-    <main className="min-h-screen text-foreground relative overflow-hidden">
+    <main className="min-h-screen text-foreground relative overflow-hidden pt-16">
+      <NavBar />
       <BlackHoleBackground />
       <Hero />
       <ThemeSwitcher />
@@ -59,26 +63,9 @@ export default function Home() {
           </motion.section>
         )}
 
-        {/* Professional Section */}
-        {collab.length > 0 && (
-          <motion.section
-            id="collab"
-            className="space-y-12"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="flex flex-col gap-2 border-l-4 border-secondary pl-6">
-              <h2 className="text-sm font-mono tracking-widest text-secondary uppercase">02 / Enterprise</h2>
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight">Professional Regiments</h3>
-              <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Joint-task force collaborations and managed infrastructure.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {collab.map(p => <ProjectCard key={p.id} project={p} />)}
-            </div>
-          </motion.section>
-        )}
+        <PublicationsList />
+
+        <ExperienceTimeline />
 
         {/* Archive Section with Filter */}
         <motion.section
@@ -90,7 +77,7 @@ export default function Home() {
           transition={{ duration: 0.7 }}
         >
           <div className="flex flex-col gap-2 border-l-4 border-white/20 pl-6">
-            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">03 / Database</h2>
+            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">04 / Database</h2>
             <h3 className="text-3xl md:text-5xl font-bold tracking-tight">The Archive</h3>
             <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Comprehensive system logs of all minor projects and exercises.</p>
           </div>

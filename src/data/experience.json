@@ -1,0 +1,39 @@
+[
+  {
+    "company": "Top Tier Tech Company",
+    "group": "Ad Platforms",
+    "role": "Machine Learning Engineer",
+    "location": "United States",
+    "startDate": "2021",
+    "endDate": "Present",
+    "bullets": [
+      "Architect unified model-development platforms supporting large language model fine-tuning across shared compute infrastructure.",
+      "Build high-throughput GPU inference servers with strict latency requirements for mission-critical production workloads.",
+      "Develop agentic ML-platform tools utilizing internal knowledge bases to improve engineer productivity and deployment velocity."
+    ]
+  },
+  {
+    "company": "Top Tier Tech Company",
+    "group": "AI Assistant",
+    "role": "Software Engineer",
+    "location": "United States",
+    "startDate": "2017",
+    "endDate": "2021",
+    "bullets": [
+      "Led deep learning solutions from 0-to-1, enabling scalable, code-free training and serving for production systems.",
+      "Streamlined feature release processes across regions to drastically reduce time-to-market.",
+      "Optimized model building and feature extraction pipelines, resulting in substantial annual cost savings."
+    ]
+  },
+  {
+    "company": "Research Institution",
+    "group": "University Research",
+    "role": "Research Assistant",
+    "location": "United States",
+    "startDate": "2015",
+    "endDate": "2017",
+    "bullets": [
+      "Researched and developed an AI-assisted monitoring system, successfully deployed to partnered medical centers."
+    ]
+  }
+]

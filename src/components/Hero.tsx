@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import projectsData from "@/data/projects.json";
+import profileData from "@/data/profile.json";
 import { Project } from "@/types";
 
 export function Hero() {
@@ -39,29 +40,30 @@ export function Hero() {
                 >
                     <div className="space-y-4">
                         <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-mono font-bold tracking-widest rounded-full uppercase border border-primary/30">
-                            System Online
+                            {profileData.tagline}
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mt-4">
-                            Engineered<br/>Elegance
+                            {profileData.name}
                         </h1>
-                        <p className="text-lg text-muted-foreground mt-4 max-w-md">
-                            Hi, I&apos;m William. I specialized in highly scalable machine learning systems, generative AI, blockchain, and data analytics.
+                        <p className="text-sm md:text-base text-muted-foreground mt-4 max-w-lg leading-relaxed">
+                            {profileData.summary}
                         </p>
                     </div>
 
                     <div className="flex gap-4 mt-8">
                         <a
-                            href="#featured"
+                            href="https://github.com/WilliamOnVoyage"
+                            target="_blank"
                             className="px-6 py-3 rounded-md bg-primary text-primary-foreground font-bold font-mono text-sm tracking-wide hover:bg-primary/90 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] uppercase"
                         >
-                            Execute_Run()
+                            View_Source()
                         </a>
                         <a
-                            href="https://github.com/WilliamOnVoyage"
+                            href={`https://${profileData.contact.linkedin}`}
                             target="_blank"
                             className="px-6 py-3 rounded-md border border-white/20 hover:border-secondary hover:text-secondary font-mono text-sm tracking-wide transition-all uppercase"
                         >
-                            View_Source()
+                            View_Network()
                         </a>
                     </div>
                 </motion.div>
@@ -101,26 +103,14 @@ export function Hero() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="md:col-span-1 md:row-span-1 glass-panel rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden"
                 >
-                    <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest absolute top-6 left-6">Competencies</h3>
+                    <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest absolute top-6 left-6">Achievements</h3>
                     <div className="mt-8 space-y-4 font-mono text-xs w-full">
-                        <div className="space-y-1.5">
-                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">ML Systems</span><span className="text-primary font-bold">95%</span></div>
-                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
-                                <motion.div initial={{ width: 0 }} whileInView={{ width: "95%" }} transition={{ duration: 1, delay: 0.5 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                        {profileData.achievements.slice(0, 4).map((ach, i) => (
+                            <div key={i} className="flex gap-3 text-muted-foreground">
+                                <span className="text-primary">▹</span>
+                                <span>{ach.title}</span>
                             </div>
-                        </div>
-                        <div className="space-y-1.5">
-                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">Data Analytics</span><span className="text-primary font-bold">85%</span></div>
-                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
-                                <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} transition={{ duration: 1, delay: 0.6 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
-                            </div>
-                        </div>
-                        <div className="space-y-1.5">
-                            <div className="flex justify-between"><span className="uppercase text-muted-foreground">Blockchain</span><span className="text-primary font-bold">80%</span></div>
-                            <div className="w-full bg-background/50 h-1 rounded-full overflow-hidden border border-white/5">
-                                <motion.div initial={{ width: 0 }} whileInView={{ width: "80%" }} transition={{ duration: 1, delay: 0.7 }} className="bg-primary h-full shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </motion.div>
 

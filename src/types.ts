@@ -25,6 +25,12 @@ export interface Project {
   liveUrl?: string | null;
   thumbnail?: string | null;
   publicDescription?: string | null;
+
+  // New Hardcore Fields
+  open_issues_count?: number;
+  architecture?: string | null;
+  keyChallenges?: string[];
+  metrics?: string[];
 }
 
 export interface ProjectOverride {

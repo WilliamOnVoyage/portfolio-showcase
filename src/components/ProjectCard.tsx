@@ -5,7 +5,7 @@ import { Project } from "@/types";
 import { Modal } from "@/components/ui/Modal";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Star, Lock, Globe, Terminal } from "lucide-react";
+import { Github, Star, Lock, Globe, Terminal, CircleDot, GitFork, Activity } from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 
@@ -52,11 +52,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                 {project.description}
                             </p>
                         </div>
-                        <div className="flex items-center gap-1 text-primary">
+                        <div className="flex items-center gap-3 text-primary">
                             {project.stargazers_count > 0 && (
-                                <div className="flex items-center gap-1 text-xs font-mono">
+                                <div className="flex items-center gap-1 text-xs font-mono" title="Stars">
                                     <Star className="h-3 w-3" />
                                     <span>{project.stargazers_count}</span>
+                                </div>
+                            )}
+                            {project.forks_count > 0 && (
+                                <div className="flex items-center gap-1 text-xs font-mono" title="Forks">
+                                    <GitFork className="h-3 w-3" />
+                                    <span>{project.forks_count}</span>
+                                </div>
+                            )}
+                            {(project.open_issues_count ?? 0) > 0 && (
+                                <div className="flex items-center gap-1 text-xs font-mono" title="Open Issues">
+                                    <CircleDot className="h-3 w-3" />
+                                    <span>{project.open_issues_count}</span>
                                 </div>
                             )}
                         </div>
@@ -95,16 +107,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         </div>
                     )}
 
-                    <div className="flex min-w-0 flex-1 flex-col space-y-6">
-                        <div className="flex flex-wrap gap-4 border-b border-white/10 pb-4">
+                    <div className="flex min-w-0 flex-1 flex-col space-y-4">
+                        <div className="flex flex-wrap gap-4 border-b border-white/10 pb-3">
                             {!project.is_private && project.html_url && (
                                 <a
                                     href={project.html_url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest hover:text-primary transition-colors"
+                                    className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest hover:text-primary transition-colors"
                                 >
-                                    <Github className="h-4 w-4" />
+                                    <Github className="h-3 w-3" />
                                     Source
                                 </a>
                             )}
@@ -113,9 +125,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                     href={project.liveUrl || project.homepage || '#'}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest hover:text-primary transition-colors"
+                                    className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest hover:text-primary transition-colors"
                                 >
-                                    <Globe className="h-4 w-4" />
+                                    <Globe className="h-3 w-3" />
                                     Live Deploy
                                 </a>
                             )}
@@ -124,15 +136,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                     href={project.demoUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary hover:text-primary/80 transition-colors"
+                                    className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-primary hover:text-primary/80 transition-colors"
                                 >
-                                    <Globe className="h-4 w-4" />
-                                    Execute Demo
+                                    <Globe className="h-3 w-3" />
+                                    Demo
                                 </a>
                             )}
                             {project.is_private && (
-                                <span className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                                    <Lock className="h-4 w-4" />
+                                <span className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                                    <Lock className="h-3 w-3" />
                                     Classified
                                 </span>
                             )}
@@ -140,13 +152,53 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
                         <div className="prose prose-sm dark:prose-invert max-w-none text-foreground/90 font-sans tracking-wide">
                             <ReactMarkdown>
-                                {project.longDescription || project.description}
+                                {project.description || ""}
                             </ReactMarkdown>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 pt-4">
+                        {/* Hardcore Engineering Details */}
+                        {(project.architecture || (project.keyChallenges && project.keyChallenges.length > 0) || (project.metrics && project.metrics.length > 0)) && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/10 pt-4">
+                                {project.architecture && (
+                                    <div className="space-y-1 col-span-1 md:col-span-2">
+                                        <h4 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+                                            <Activity className="w-3 h-3" /> Architecture
+                                        </h4>
+                                        <p className="text-xs text-foreground/80 leading-relaxed font-sans line-clamp-3">
+                                            {project.architecture}
+                                        </p>
+                                    </div>
+                                )}
+                                {project.keyChallenges && project.keyChallenges.length > 0 && (
+                                    <div className="space-y-1">
+                                        <h4 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+                                            <Terminal className="w-3 h-3" /> Challenges
+                                        </h4>
+                                        <ul className="list-disc pl-4 text-xs text-foreground/80 space-y-1 font-sans">
+                                            {project.keyChallenges.slice(0,2).map((challenge, idx) => (
+                                                <li key={idx} className="line-clamp-2">{challenge}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                                {project.metrics && project.metrics.length > 0 && (
+                                    <div className="space-y-1">
+                                        <h4 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+                                            <Globe className="w-3 h-3" /> Scale
+                                        </h4>
+                                        <ul className="list-disc pl-4 text-xs text-foreground/80 space-y-1 font-sans">
+                                            {project.metrics.slice(0,2).map((metric, idx) => (
+                                                <li key={idx} className="line-clamp-2">{metric}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        <div className="flex flex-wrap gap-2 pt-2">
                             {project.techStack?.map((tech) => (
-                                <span key={tech} className="px-3 py-1 bg-primary/10 border border-primary/30 text-primary rounded-sm text-xs font-mono uppercase tracking-widest">
+                                <span key={tech} className="px-2 py-1 bg-primary/10 border border-primary/30 text-primary rounded-sm text-[10px] font-mono uppercase tracking-widest">
                                     {tech}
                                 </span>
                             ))}
