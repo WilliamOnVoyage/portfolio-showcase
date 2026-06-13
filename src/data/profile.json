@@ -1,23 +1,23 @@
 {
   "name": "Moliang Zhou",
   "tagline": "Engineered Elegance",
-  "summary": "AI platform leader with 10 years of industrial experience in engineering and applied research. Focused on foundation models, deep learning, and general platform support, connecting cutting-edge AI with pragmatic engineering to turn research into resilient, production-grade platforms while growing talent and fostering a high-standard engineering culture.",
+  "summary": "Machine learning platform leader with 10 years spanning AI infrastructure and applied research. Bridges frontier AI and pragmatic engineering, turning ambiguous mandates into architecture and leading teams from 0-to-1 to org-wide platforms — with deep expertise across the model lifecycle: development, serving, and inference.",
   "achievements": [
     {
-      "title": "Critical Business Impact",
-      "description": "Enable nine-figure revenue growth and new products"
+      "title": "Nine-Figure Revenue Impact",
+      "description": "Power flagship ad products and new-product launches"
     },
     {
-      "title": "Multiple 0-to-1 Track Records",
-      "description": "Spearhead ML platforms from ground-up to SOTA, end to end"
+      "title": "Real-Time LLM & Embedding Serving",
+      "description": "Built production online inference systems at scale"
     },
     {
-      "title": "AI-Centric, Domain-Versatile",
-      "description": "Foundation model and deep learning focus in ads, NLP, and more"
+      "title": "0-to-1 ML Platforms",
+      "description": "Took unified ML platforms from ambiguity to org-wide standard"
     },
     {
       "title": "Research & Innovation",
-      "description": "Applied research publications and patents in the ML field"
+      "description": "Patents and peer-reviewed publications in ML/AI"
     }
   ],
   "contact": {
@@ -39,8 +39,9 @@
     }
   ],
   "skills": {
-    "Programming Language | Software Framework | Service": "Python, Java, Rust, C/C++ | Spring, Spark, Kafka, Docker, Kubernetes | AWS, Datadog, Grafana",
-    "Agentic Framework | Large Language Model Framework | AI Productivity Tool": "MCP, LangGraph, smolagents, OpenAI Agents SDK | vLLM, SGLang, TensorRT-LLM | Claude Code, Cursor",
-    "Distributed Machine Learning Framework & Services": "Triton Inference Server, HuggingFace, Ray, DeepSpeed, PyTorch, JAX, TensorFlow, ONNX, MLflow"
+    "Machine Learning Training & Modeling": "PyTorch, JAX, TensorFlow, Ray, DeepSpeed, HuggingFace, MLflow",
+    "Model Serving & Inference": "Triton Inference Server, vLLM, SGLang, TensorRT-LLM, Ray Serve, ONNX",
+    "Agentic & LLM Tooling": "MCP, LangSmith, OpenAI Agents SDK, smolagents | Claude Code, Cursor, Antigravity",
+    "Languages, Frameworks & Platform": "Python, Java, Rust, C/C++ | Spark, Kafka, Docker, Kubernetes, Spring | AWS, GCP, Datadog, Grafana"
   }
 }

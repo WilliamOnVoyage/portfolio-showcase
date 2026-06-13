@@ -2,27 +2,27 @@
   {
     "company": "Top Tier Tech Company",
     "group": "Ad Platforms",
-    "role": "Machine Learning Engineer",
+    "role": "Staff Machine Learning Engineer",
     "location": "United States",
     "startDate": "2021",
     "endDate": "Present",
     "bullets": [
-      "Architect unified model-development platforms supporting large language model fine-tuning across shared compute infrastructure.",
-      "Build high-throughput GPU inference servers with strict latency requirements for mission-critical production workloads.",
-      "Develop agentic ML-platform tools utilizing internal knowledge bases to improve engineer productivity and deployment velocity."
+      "Architected and built the organization's first real-time LLM and embedding-model serving platform, enabling flagship product initiatives and revenue growth.",
+      "Defined and architected a unified ML development platform—from classic deep models to 100B+ LLMs—accelerating the organization's time-to-impact.",
+      "Drove advertiser-facing ML products (retrieval, ranking, and recommendations) to unlock significant nine-figure annual revenue growth."
     ]
   },
   {
     "company": "Top Tier Tech Company",
     "group": "AI Assistant",
-    "role": "Software Engineer",
+    "role": "Software Development Engineer",
     "location": "United States",
     "startDate": "2017",
     "endDate": "2021",
     "bullets": [
-      "Led deep learning solutions from 0-to-1, enabling scalable, code-free training and serving for production systems.",
-      "Streamlined feature release processes across regions to drastically reduce time-to-market.",
-      "Optimized model building and feature extraction pipelines, resulting in substantial annual cost savings."
+      "Architected a 0-to-1 deep-learning platform enabling code-free training through serving at scale, adopted across teams.",
+      "Led the language-model inference engine under strict latency and reliability bars, significantly improving user experience.",
+      "Re-architected cross-team feature-release pipelines and optimized model building, driving substantial annual cost savings and efficiency gains."
     ]
   },
   {
@@ -33,7 +33,7 @@
     "startDate": "2015",
     "endDate": "2017",
     "bullets": [
-      "Researched and developed an AI-assisted monitoring system, successfully deployed to partnered medical centers."
+      "Built and deployed an AI-assisted surgical-monitoring system, successfully deployed to partnered medical centers."
     ]
   }
 ]
