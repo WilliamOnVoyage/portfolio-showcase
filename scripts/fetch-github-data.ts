@@ -191,7 +191,7 @@ async function main() {
             hidden: isHidden,
 
             architecture: override.architecture || null,
-            keyChallenges: override.keyChallenges || [],
+            features: override.features || [],
             metrics: override.metrics || [],
 
             tagline: contract.tagline || null,
@@ -234,7 +234,7 @@ async function main() {
                 hidden: false,
 
                 architecture: override.architecture || null,
-                keyChallenges: override.keyChallenges || [],
+                features: override.features || [],
                 metrics: override.metrics || [],
 
                 tagline: null,

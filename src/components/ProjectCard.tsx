@@ -157,7 +157,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         </div>
 
                         {/* Hardcore Engineering Details */}
-                        {(project.architecture || (project.keyChallenges && project.keyChallenges.length > 0) || (project.metrics && project.metrics.length > 0)) && (
+                        {(project.architecture || (project.features && project.features.length > 0) || (project.metrics && project.metrics.length > 0)) && (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/10 pt-4">
                                 {project.architecture && (
                                     <div className="space-y-1 col-span-1 md:col-span-2">
@@ -169,14 +169,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
                                         </p>
                                     </div>
                                 )}
-                                {project.keyChallenges && project.keyChallenges.length > 0 && (
+                                {project.features && project.features.length > 0 && (
                                     <div className="space-y-1">
                                         <h4 className="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-1">
-                                            <Terminal className="w-3 h-3" /> Challenges
+                                            <Star className="w-3 h-3" /> Features
                                         </h4>
                                         <ul className="list-disc pl-4 text-xs text-foreground/80 space-y-1 font-sans">
-                                            {project.keyChallenges.slice(0,2).map((challenge, idx) => (
-                                                <li key={idx} className="line-clamp-2">{challenge}</li>
+                                            {project.features.slice(0,2).map((feature, idx) => (
+                                                <li key={idx} className="line-clamp-2">{feature}</li>
                                             ))}
                                         </ul>
                                     </div>

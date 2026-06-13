@@ -16,9 +16,9 @@
     "mockup": "/images/thinkinglab-mockup.svg",
     "longDescription": "ThinkingLab is a visual machine-learning workbench that turns model architecture design into an interactive graph. Users drag data, preprocessing, model, activation, and loss blocks onto a canvas; connect them into workflows; inspect tensor shapes, dtypes, parameters, FLOPs, and validation errors; visualize forward and backward flow; then export runnable PyTorch code and stream local training logs through an Express/SSE backend.",
     "architecture": "React frontend using React Flow for canvas management, communicating via Server-Sent Events (SSE) with an Express Node.js backend to stream PyTorch training logs in real-time.",
-    "keyChallenges": [
-      "Implemented a custom shape-inference algorithm to validate tensor dimensions across connected graph nodes before code export.",
-      "Managed complex, deeply nested application state using Zustand, ensuring 60fps rendering even with hundreds of nodes."
+    "features": [
+      "Custom shape-inference algorithm to validate tensor dimensions across connected graph nodes before export.",
+      "Real-time Zustand state management ensuring 60fps rendering with hundreds of concurrent nodes."
     ],
     "metrics": [
       "Supports graphs with 500+ nodes and edges without frame drops.",
@@ -42,9 +42,9 @@
     "mockup": "/images/creditstack-mockup.png",
     "longDescription": "CreditStack is a full-stack fintech product that helps users decide which card to use, track realized and potential value, manage credits and annual fees, and reason through rewards strategy with an AI assistant. The project combines a dashboard, wallet persistence, valuation logic, statement analysis, and AI function-calling to turn messy card benefits into an actionable command center.",
     "architecture": "Next.js App Router for server-rendered React components. Data is managed through Prisma ORM to SQLite. Integrates OpenAI API with custom function calling to interface with the user's financial database.",
-    "keyChallenges": [
-      "Engineered an AI agent using OpenAI function calling that can securely query the user's local SQLite database to answer complex queries.",
-      "Built a robust PDF parsing pipeline to extract structured transaction data from messy credit card statements."
+    "features": [
+      "AI agent utilizing OpenAI function calling to securely query the user's local SQLite database for analysis.",
+      "Robust PDF parsing pipeline extracting structured transaction data from unstructured credit card statements."
     ],
     "metrics": [
       "AI Assistant latency reduced by 40% through edge streaming.",
@@ -66,8 +66,8 @@
     "featured": true,
     "longDescription": "Dice-Dine is a consumer AI product for restaurant discovery. Users describe what they want in plain language, and the app returns curated dining options with reasons, ratings context, addresses, and map-based visual discovery. It demonstrates conversational UX, structured AI output, authentication, and geospatial product design.",
     "architecture": "Next.js 15 providing a conversational interface. User queries are translated into structured schema via LLM, then mapped using Leaflet.js with dynamic marker generation.",
-    "keyChallenges": [
-      "Enforced strict JSON schema outputs from the LLM to ensure map markers never crash due to hallucinatory coordinates."
+    "features": [
+      "Strictly enforced JSON schema from LLM for robust map marker generation and location accuracy."
     ],
     "metrics": []
   },
@@ -76,9 +76,9 @@
     "featured": true,
     "category": "Data Science",
     "architecture": "Python data ingestion pipeline hitting Wargaming APIs, storing raw JSON logs into a SQL database for offline analysis using Pandas and Scikit-learn.",
-    "keyChallenges": [
-      "Reverse-engineered undocumented API endpoints to extract comprehensive match-level telemetry.",
-      "Handled rate-limiting and exponential backoff across millions of API requests during backfilling."
+    "features": [
+      "Comprehensive match-level telemetry extraction from reverse-engineered API endpoints.",
+      "Automated rate-limiting and exponential backoff scaling to millions of API requests."
     ],
     "metrics": [
       "Ingested and analyzed over 1TB of raw player match data.",
@@ -95,9 +95,9 @@
     "category": "FinTech & Crypto",
     "featured": true,
     "architecture": "TypeScript frontend communicating with a Python data science backend. The backend utilizes Pandas for quantitative analysis of financial time-series data.",
-    "keyChallenges": [
-      "Synchronized state between a complex interactive TypeScript UI and long-running Python quantitative jobs.",
-      "Collaborated across disciplines (frontend engineering and quantitative finance) to build a cohesive product."
+    "features": [
+      "Synchronized state architecture bridging interactive TypeScript UIs with long-running Python quantitative jobs.",
+      "Cross-disciplinary integration of frontend engineering and advanced quantitative finance models."
     ],
     "metrics": []
   },

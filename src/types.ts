@@ -29,7 +29,7 @@ export interface Project {
   // New Hardcore Fields
   open_issues_count?: number;
   architecture?: string | null;
-  keyChallenges?: string[];
+  features?: string[];
   metrics?: string[];
 }
 
