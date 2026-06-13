@@ -21,25 +21,8 @@ export function NavBar() {
                     <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
                     <a href="#featured" className="hover:text-primary transition-colors">Projects</a>
                     <a href="#publications" className="hover:text-primary transition-colors">Publications</a>
-                    <a 
-                        href="/MoliangZhou-Resume-2026.html" 
-                        target="_blank" 
-                        className="px-3 py-1.5 border border-primary/30 text-primary rounded hover:bg-primary hover:text-primary-foreground transition-all"
-                    >
-                        Download_Resume
-                    </a>
                 </div>
 
-                {/* Mobile resume button */}
-                <div className="md:hidden">
-                    <a 
-                        href="/MoliangZhou-Resume-2026.html" 
-                        target="_blank" 
-                        className="px-3 py-1.5 border border-primary/30 text-primary rounded font-mono text-xs hover:bg-primary hover:text-primary-foreground transition-all"
-                    >
-                        Resume
-                    </a>
-                </div>
             </div>
         </motion.nav>
     );
