@@ -9,7 +9,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "open_issues_count": 0,
-    "updated_at": "2026-06-12T23:09:04Z",
+    "updated_at": "2026-06-13T05:11:10Z",
     "is_private": false,
     "topics": [],
     "techStack": [
@@ -165,7 +165,7 @@
     ],
     "category": "Consumer AI",
     "featured": true,
-    "mockup": "/images/dicedine-mockup.svg",
+    "mockup": null,
     "longDescription": "Dice-Dine combines the intelligence of GPT with geospatial data to provide personalized, actionable restaurant recommendations. It features a conversational interface for expressing dining preferences, and plots curated results on an interactive map. Features include automatic location awareness, contextual 'roll-a-dice' randomizers, and a clean, minimalist UI.",
     "hidden": false,
     "architecture": "Next.js 15 providing a conversational interface. User queries are translated into structured schema via LLM, then mapped using Leaflet.js with dynamic marker generation.",

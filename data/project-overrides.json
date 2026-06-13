@@ -64,7 +64,6 @@
     ],
     "category": "Consumer AI",
     "featured": true,
-    "mockup": "/images/dicedine-mockup.svg",
     "longDescription": "Dice-Dine is a consumer AI product for restaurant discovery. Users describe what they want in plain language, and the app returns curated dining options with reasons, ratings context, addresses, and map-based visual discovery. It demonstrates conversational UX, structured AI output, authentication, and geospatial product design.",
     "architecture": "Next.js 15 providing a conversational interface. User queries are translated into structured schema via LLM, then mapped using Leaflet.js with dynamic marker generation.",
     "keyChallenges": [

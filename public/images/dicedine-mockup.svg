@@ -1,8 +1,0 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" fill="#000000"/>
-  <!-- Map pin -->
-  <path d="M256 64 C176 64 112 128 112 208 C112 304 256 448 256 448 C256 448 400 304 400 208 C400 128 336 64 256 64 Z" fill="none" stroke="#f97316" stroke-width="24" stroke-linejoin="round"/>
-  <!-- Dice pips inside -->
-  <rect x="200" y="160" width="32" height="32" fill="#f97316" rx="8"/>
-  <rect x="280" y="232" width="32" height="32" fill="#f97316" rx="8"/>
-</svg>
