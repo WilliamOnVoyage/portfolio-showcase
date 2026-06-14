@@ -18,9 +18,9 @@ export function NavBar() {
                 </a>
                 
                 <div className="hidden md:flex items-center gap-6 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
                     <a href="#featured" className="hover:text-primary transition-colors">Projects</a>
                     <a href="#publications" className="hover:text-primary transition-colors">Publications</a>
+                    <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
                 </div>
 
             </div>
