@@ -94,7 +94,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
             </motion.div>
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={`[SYS.READ] ${project.name}`} className="sm:max-w-3xl glass-panel !bg-background/95">
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.name} className="sm:max-w-3xl glass-panel !bg-background/95">
                 <div className="flex flex-col gap-8 md:flex-row">
                     {mockupSrc && (
                         <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-lg border border-white/10 md:h-auto md:w-64 bg-black/50">
