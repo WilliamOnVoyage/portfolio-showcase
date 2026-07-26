@@ -27,10 +27,7 @@ Maintaining an up-to-date personal portfolio website is notorious for developer 
 
 The system operates via a 3-tier data pipeline:
 
-```mermaid
-graph TD
-    A["TRACKING REPOSITORIES<br/>• Public / Private GitHub Repositories<br/>• Root PORTFOLIO.json Contract File"] --> B["BUILD-TIME INGESTION PIPELINE (scripts/fetch-github-data.ts)<br/>• Octokit REST API fetch for owner repos<br/>• Direct raw fetch of root PORTFOLIO.json<br/>• Merge local taxonomy overrides (src/data/project-overrides.json)<br/>• Download & optimize repo thumbnails"]
-    B --> C["STATIC SITE GENERATION (Next.js 14 SSG + Markdown Compiler)<br/>• Output compiled src/data/projects.json & blogs.json<br/>• Pre-render static pages (/, /blog, /blog/[slug])"]
+```architecture
 ```
 
 ---

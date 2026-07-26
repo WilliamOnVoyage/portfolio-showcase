@@ -107,3 +107,12 @@
     @apply border-l-2 border-primary pl-4;
   }
 }
+
+/* Disable Tailwind Typography automatic backticks on code tags */
+.prose :where(code):not(:where([class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"] *))::after,
+.prose code::before,
+.prose code::after {
+  content: "" !important;
+  display: none !important;
+}
