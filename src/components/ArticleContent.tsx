@@ -21,28 +21,16 @@ const MermaidDiagram = dynamic(
   { ssr: false }
 );
 
+const ArchitectureDiagram = dynamic(
+  () => import("@/components/ArchitectureDiagram").then((mod) => mod.ArchitectureDiagram),
+  { ssr: false }
+);
+
 interface ArticleContentProps {
   post: BlogPost;
 }
 
 export function ArticleContent({ post }: ArticleContentProps) {
-  // Extract high-level H2 headings for Table of Contents (excluding code blocks)
-  const headings = useMemo(() => {
-    const contentWithoutCodeBlocks = post.content.replace(/```[\s\S]*?```/g, "");
-    const lines = contentWithoutCodeBlocks.split("\n");
-    return lines
-      .filter((line) => line.startsWith("## "))
-      .map((line) => {
-        const rawText = line.replace(/^##\s+/, "");
-        const text = rawText.replace(/`/g, ""); // Strip raw backticks from TOC text
-        const id = text
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, "")
-          .replace(/\s+/g, "-");
-        return { text, id };
-      });
-  }, [post.content]);
-
   // Helper to extract clean plain text from React children tree
   const extractPlainText = (node: React.ReactNode): string => {
     if (typeof node === "string") return node;
@@ -60,6 +48,23 @@ export function ArticleContent({ post }: ArticleContentProps) {
     }
     return "";
   };
+
+  // Extract high-level H2 headings for Table of Contents (excluding code blocks)
+  const headings = useMemo(() => {
+    const contentWithoutCodeBlocks = post.content.replace(/```[\s\S]*?```/g, "");
+    const lines = contentWithoutCodeBlocks.split("\n");
+    return lines
+      .filter((line) => line.startsWith("## "))
+      .map((line) => {
+        const rawText = line.replace(/^##\s+/, "");
+        const text = rawText.replace(/`/g, ""); // Strip raw backticks from TOC text
+        const id = text
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, "")
+          .replace(/\s+/g, "-");
+        return { text, id };
+      });
+  }, [post.content]);
 
   return (
     <main className="min-h-screen text-foreground relative overflow-hidden pt-16">
@@ -134,7 +139,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-8 glass-panel rounded-2xl p-8 md:p-10 border border-border/50 dark:border-white/10 space-y-6 prose dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:text-xl prose-a:text-secondary hover:prose-a:underline prose-strong:text-foreground dark:prose-strong:text-foreground font-sans leading-relaxed text-foreground"
+            className="lg:col-span-8 glass-panel rounded-2xl p-8 md:p-10 border border-border/50 dark:border-white/10 space-y-6 prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:text-xl prose-a:text-secondary hover:prose-a:underline prose-strong:text-foreground dark:prose-strong:text-foreground font-sans leading-relaxed text-foreground"
           >
             <ReactMarkdown
               components={{
@@ -186,20 +191,21 @@ export function ArticleContent({ post }: ArticleContentProps) {
                   children?: React.ReactNode;
                 }) => {
                   const match = /language-(\w+)/.exec(className || "");
-                  const isMermaid = match && match[1] === "mermaid";
-                  const rawContent = String(children).replace(/\n$/, "");
+                  const lang = match ? match[1] : "";
+                  const rawContent = extractPlainText(children).replace(/\n$/, "");
 
-                  if (isMermaid) {
+                  if (["architecture", "diagram", "flow", "bytebytego"].includes(lang)) {
+                    return <ArchitectureDiagram content={rawContent} />;
+                  }
+
+                  if (lang === "mermaid") {
                     return <MermaidDiagram chart={rawContent} />;
                   }
 
                   const isInline = !className;
 
                   if (isInline) {
-                    const cleanText =
-                      typeof children === "string"
-                        ? children.replace(/^`+|`+$/g, "")
-                        : children;
+                    const cleanText = extractPlainText(children).replace(/`/g, "").trim();
                     return (
                       <code className="font-mono text-xs md:text-sm bg-secondary/15 dark:bg-white/10 text-secondary dark:text-primary px-1.5 py-0.5 rounded border border-secondary/30 dark:border-white/10 font-semibold">
                         {cleanText}
@@ -214,6 +220,22 @@ export function ArticleContent({ post }: ArticleContentProps) {
                   );
                 },
                 pre: ({ children }: { children?: React.ReactNode }) => {
+                  const child = Array.isArray(children) ? children[0] : children;
+                  const className =
+                    child &&
+                    typeof child === "object" &&
+                    "props" in child
+                      ? (child as { props?: { className?: string } }).props?.className || ""
+                      : "";
+
+                  if (
+                    ["language-architecture", "language-diagram", "language-flow", "language-bytebytego", "language-mermaid"].some((cls) =>
+                      className.includes(cls)
+                    )
+                  ) {
+                    return <div className="not-prose my-8 w-full overflow-hidden">{child}</div>;
+                  }
+
                   return (
                     <pre className="font-mono text-xs md:text-sm bg-transparent border border-border/60 dark:border-white/15 p-4.5 rounded-xl overflow-x-auto my-6 text-foreground shadow-sm">
                       {children}
