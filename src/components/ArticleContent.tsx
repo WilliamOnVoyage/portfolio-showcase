@@ -52,7 +52,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors px-3 py-1.5 rounded-md glass-panel border border-white/10 hover:border-primary/40"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors px-3.5 py-2 rounded-md glass-panel border border-border/50 dark:border-white/10 hover:border-primary/50 shadow-sm"
           >
             <ArrowLeft className="w-4 h-4" /> Back to All Articles
           </Link>
@@ -63,14 +63,14 @@ export function ArticleContent({ post }: ArticleContentProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="glass-panel rounded-2xl p-8 md:p-10 space-y-6 border border-white/10 hud-border relative overflow-hidden"
+          className="glass-panel rounded-2xl p-8 md:p-10 space-y-6 border border-border/50 dark:border-white/10 hud-border relative overflow-hidden"
         >
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-md bg-primary/20 border border-primary/40 text-primary font-mono text-xs uppercase tracking-wider font-semibold"
+                className="px-3 py-1 rounded-md bg-secondary/15 dark:bg-primary/20 border border-secondary/30 dark:border-primary/40 text-secondary dark:text-primary font-mono text-xs uppercase tracking-wider font-bold"
               >
                 {tag}
               </span>
@@ -78,43 +78,25 @@ export function ArticleContent({ post }: ArticleContentProps) {
           </div>
 
           {/* Article Title */}
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-foreground">
             {post.title}
           </h1>
 
           {/* Article Subtitle / Description */}
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+          <p className="text-base md:text-lg text-foreground/80 dark:text-muted-foreground leading-relaxed max-w-3xl">
             {post.description}
           </p>
 
           {/* Meta Details Bar */}
-          <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground">
-            {post.author && (
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center font-bold text-primary text-xs">
-                  {post.author.name.charAt(0)}
-                </div>
-                <div>
-                  <span className="font-bold text-foreground block">
-                    {post.author.name}
-                  </span>
-                  {post.author.role && (
-                    <span className="text-[11px] text-muted-foreground">
-                      {post.author.role}
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
-
-            <div className="flex items-center gap-4 text-xs font-mono uppercase">
+          <div className="pt-6 border-t border-border/50 dark:border-white/10 flex flex-wrap items-center gap-4 font-mono text-xs text-foreground/70 dark:text-muted-foreground">
+            <div className="flex items-center gap-4 text-xs font-mono uppercase font-semibold">
               <span className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-primary" />
+                <Calendar className="w-3.5 h-3.5 text-secondary dark:text-primary" />
                 {post.date}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-primary" />
+                <Clock className="w-3.5 h-3.5 text-secondary dark:text-primary" />
                 {post.readTime}
               </span>
             </div>
@@ -128,7 +110,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-8 glass-panel rounded-2xl p-8 md:p-10 border border-white/10 space-y-6 prose prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-3 prose-h3:text-xl prose-a:text-primary hover:prose-a:underline prose-code:text-secondary prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-black/60 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-xl font-sans leading-relaxed"
+            className="lg:col-span-8 glass-panel rounded-2xl p-8 md:p-10 border border-border/50 dark:border-white/10 space-y-6 prose dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:border-b prose-h2:border-border prose-h2:pb-3 prose-h3:text-xl prose-a:text-secondary hover:prose-a:underline prose-strong:text-foreground dark:prose-strong:text-foreground font-sans leading-relaxed text-foreground"
           >
             <ReactMarkdown
               components={{
@@ -141,9 +123,9 @@ export function ArticleContent({ post }: ArticleContentProps) {
                   return (
                     <h2
                       id={id}
-                      className="text-2xl font-bold tracking-tight border-b border-white/10 pb-3 mt-8 mb-4 text-foreground flex items-center gap-2"
+                      className="text-2xl font-bold tracking-tight border-b border-border/50 dark:border-white/10 pb-3 mt-8 mb-4 text-foreground flex items-center gap-2"
                     >
-                      <span className="text-primary">#</span> {children}
+                      <span className="text-secondary dark:text-primary">#</span> {children}
                     </h2>
                   );
                 },
@@ -153,32 +135,37 @@ export function ArticleContent({ post }: ArticleContentProps) {
                   </h3>
                 ),
                 p: ({ children }) => (
-                  <p className="text-muted-foreground leading-relaxed my-4 text-base">
+                  <p className="text-foreground/85 dark:text-muted-foreground leading-relaxed my-4 text-base">
                     {children}
                   </p>
                 ),
+                strong: ({ children }) => (
+                  <strong className="font-bold text-foreground">
+                    {children}
+                  </strong>
+                ),
                 ul: ({ children }) => (
-                  <ul className="list-disc pl-6 space-y-2 my-4 text-muted-foreground text-base">
+                  <ul className="list-disc pl-6 space-y-2 my-4 text-foreground/85 dark:text-muted-foreground text-base">
                     {children}
                   </ul>
                 ),
                 ol: ({ children }) => (
-                  <ol className="list-decimal pl-6 space-y-2 my-4 text-muted-foreground text-base">
+                  <ol className="list-decimal pl-6 space-y-2 my-4 text-foreground/85 dark:text-muted-foreground text-base">
                     {children}
                   </ol>
                 ),
                 code: ({ children }) => (
-                  <code className="font-mono text-sm bg-white/10 text-secondary px-1.5 py-0.5 rounded border border-white/10">
+                  <code className="font-mono text-sm bg-secondary/10 dark:bg-white/10 text-secondary dark:text-secondary px-1.5 py-0.5 rounded border border-secondary/20 dark:border-white/10 font-semibold">
                     {children}
                   </code>
                 ),
                 pre: ({ children }) => (
-                  <pre className="font-mono text-xs md:text-sm bg-black/70 border border-white/10 p-4 rounded-xl overflow-x-auto my-6 text-foreground shadow-inner">
+                  <pre className="font-mono text-xs md:text-sm bg-slate-900 text-slate-100 dark:bg-black/90 dark:text-foreground border border-slate-700 dark:border-white/10 p-4 rounded-xl overflow-x-auto my-6 shadow-md">
                     {children}
                   </pre>
                 ),
                 blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-primary pl-4 py-1 my-4 italic text-muted-foreground bg-primary/5 rounded-r-lg font-mono text-sm">
+                  <blockquote className="border-l-4 border-secondary dark:border-primary pl-4 py-2 my-4 italic text-foreground/85 dark:text-muted-foreground bg-secondary/5 dark:bg-primary/5 rounded-r-lg font-mono text-sm border-y border-r border-secondary/15 dark:border-primary/15">
                     {children}
                   </blockquote>
                 ),
@@ -195,8 +182,8 @@ export function ArticleContent({ post }: ArticleContentProps) {
 
             {/* Table of Contents Card */}
             {headings.length > 0 && (
-              <div className="glass-panel rounded-xl p-5 space-y-3 font-mono border border-white/10">
-                <div className="flex items-center gap-2 text-xs text-primary font-bold uppercase tracking-widest border-b border-white/10 pb-2">
+              <div className="glass-panel rounded-xl p-5 space-y-3 font-mono border border-border/50 dark:border-white/10">
+                <div className="flex items-center gap-2 text-xs text-secondary dark:text-primary font-bold uppercase tracking-widest border-b border-border/50 dark:border-white/10 pb-2">
                   <List className="w-4 h-4" />
                   <span>Table of Contents</span>
                 </div>
@@ -205,7 +192,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
                     <a
                       key={idx}
                       href={`#${h.id}`}
-                      className={`block text-muted-foreground hover:text-primary transition-colors py-1 ${
+                      className={`block text-foreground/75 dark:text-muted-foreground hover:text-secondary dark:hover:text-primary transition-colors py-1 ${
                         h.level === 3 ? "pl-4 text-[11px]" : "font-semibold"
                       }`}
                     >
@@ -219,7 +206,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
         </div>
       </div>
 
-      <footer className="py-12 text-center text-xs font-mono uppercase tracking-widest text-muted-foreground border-t border-white/10 relative z-10 glass-panel mt-32">
+      <footer className="py-12 text-center text-xs font-mono uppercase tracking-widest text-foreground/60 dark:text-muted-foreground border-t border-border/50 dark:border-white/10 relative z-10 glass-panel mt-32">
         <p>
           SYSTEM.HALT // © {new Date().getFullYear()} WILLIAM_ON_VOYAGE. ALL DATA ENCRYPTED.
         </p>

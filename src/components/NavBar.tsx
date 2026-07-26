@@ -12,7 +12,7 @@ export function NavBar() {
             className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 bg-background/80 backdrop-blur-md"
         >
             <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-2 text-primary font-bold tracking-widest uppercase font-mono text-sm hover:text-primary/80 transition-colors">
+                <a href="/" className="flex items-center gap-2 text-primary font-bold tracking-widest uppercase font-mono text-sm hover:text-primary/80 transition-colors">
                     <Terminal className="w-4 h-4" />
                     Moliang_Zhou
                 </a>

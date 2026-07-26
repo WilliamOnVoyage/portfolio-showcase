@@ -4,255 +4,64 @@
 
 @layer base {
 
+  /* === NEON GENESIS — LIGHT MODE === */
   :root {
-    /* DEFAULT THEME (Fall back or initial) */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --background: 220 20% 97%;       /* Warm off-white */
+    --foreground: 220 20% 10%;       /* Near-black text */
+
+    --card: 220 20% 93%;             /* Subtle warm grey card */
+    --card-foreground: 220 20% 10%;
+
+    --popover: 220 20% 95%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Deep charcoal primary for light mode */
+    --primary: 220 15% 15%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Teal accent — same hue as dark mode */
+    --secondary: 190 90% 32%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Orange accent — same as dark mode */
+    --accent: 21 95% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 220 15% 15%;
+    --radius: 0.25rem;
   }
 
+  /* === NEON GENESIS — DARK MODE === */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+    --background: 0 0% 2%;           /* Deep OLED Black */
+    --foreground: 0 0% 95%;          /* Crisp off-white */
 
-  /* --- OCEAN THEME --- */
-  [data-theme='ocean'] {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 203 69% 84%;
-    --secondary-foreground: 199 89% 48%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 203 69% 84%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 199 89% 48%;
-    --radius: 0.5rem;
-  }
-
-  .dark[data-theme='ocean'],
-  [data-theme='ocean'].dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 217.2 32.6% 17.5%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 199 89% 48%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 199 89% 48%;
-  }
-
-  /* --- FOREST THEME --- */
-  [data-theme='forest'] {
-    --background: 120 20% 99%;
-    --foreground: 120 10% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 120 10% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 120 10% 10%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 140 30% 90%;
-    --secondary-foreground: 142 76% 36%;
-    --muted: 120 20% 96%;
-    --muted-foreground: 120 10% 40%;
-    --accent: 140 30% 90%;
-    --accent-foreground: 142 76% 36%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 120 20% 90%;
-    --input: 120 20% 90%;
-    --ring: 142 76% 36%;
-    --radius: 0.5rem;
-  }
-
-  .dark[data-theme='forest'],
-  [data-theme='forest'].dark {
-    --background: 140 30% 5%;
-    --foreground: 140 10% 90%;
-    --card: 140 30% 8%;
-    --card-foreground: 140 10% 90%;
-    --popover: 140 30% 8%;
-    --popover-foreground: 140 10% 90%;
-    --primary: 142 70% 50%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 140 30% 15%;
-    --secondary-foreground: 140 10% 90%;
-    --muted: 140 30% 15%;
-    --muted-foreground: 140 10% 60%;
-    --accent: 142 70% 50%;
-    --accent-foreground: 140 10% 90%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 140 10% 90%;
-    --border: 140 30% 15%;
-    --input: 140 30% 15%;
-    --ring: 142 70% 50%;
-  }
-
-  /* --- CYBERPUNK THEME --- */
-  [data-theme='cyberpunk'] {
-    --background: 280 10% 95%;
-    /* Light variant for cyberpunk? Usually dark only */
-    --foreground: 280 10% 10%;
-    /* Let's stick to dark mainly but provide fallbacks */
-    --card: 0 0% 100%;
-    --card-foreground: 280 10% 10%;
-    --primary: 320 100% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 260 100% 55%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 280 10% 90%;
-    --muted-foreground: 280 10% 40%;
-    --accent: 320 100% 55%;
-    --accent-foreground: 0 0% 100%;
-    --radius: 0rem;
-  }
-
-  .dark[data-theme='cyberpunk'],
-  [data-theme='cyberpunk'].dark {
-    --background: 280 10% 5%;
-    --foreground: 0 0% 100%;
-    --card: 280 10% 10%;
-    --card-foreground: 0 0% 100%;
-    --popover: 280 10% 10%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 320 100% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 260 100% 55%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 280 10% 15%;
-    --muted-foreground: 280 10% 60%;
-    --accent: 320 100% 55%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 280 10% 20%;
-    --input: 280 10% 20%;
-    --ring: 320 100% 55%;
-  }
-
-  /* --- ENGINEERED ELEGANCE THEME (Previously Eva) --- */
-  [data-theme='eva'] {
-    --background: 0 0% 2%; /* Deep OLED Black */
-    --foreground: 0 0% 95%; /* Crisp off-white */
-
-    --card: 0 0% 5%; /* Slightly lighter than bg */
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 95%;
-
-    /* Pure White (Primary UI elements) */
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-
-    /* Neon Cyan (Secondary interactive elements) */
-    --secondary: 190 100% 38%;
-    --secondary-foreground: 0 0% 100%;
-
-    /* Muted text for subtle tech details */
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
-
-    /* Neon Orange (Accent/Warning) */
-    --accent: 21 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%; /* Very subtle dark borders */
-    --input: 0 0% 10%;
-    --ring: 0 0% 100%; /* White ring */
-    --radius: 0.25rem; /* Slight tech-feel rounding */
-  }
-
-  /* Specific typography overrides for Engineered Elegance */
-  [data-theme='eva'] h1,
-  [data-theme='eva'] h2,
-  [data-theme='eva'] h3 {
-    color: hsl(0, 0%, 100%);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  /* Link hover states (Neon Cyan) */
-  [data-theme='eva'] a:hover {
-    color: hsl(190, 100%, 38%);
-  }
-
-  .dark[data-theme='eva'],
-  [data-theme='eva'].dark {
-    /* Identical to light mode since it's a true dark theme */
-    --background: 0 0% 2%;
-    --foreground: 0 0% 95%;
     --card: 0 0% 5%;
     --card-foreground: 0 0% 95%;
+
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 95%;
 
+    /* Pure White primary */
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 0%;
+
+    /* Neon Cyan secondary */
     --secondary: 190 100% 38%;
     --secondary-foreground: 0 0% 100%;
 
+    /* Muted for subtle tech details */
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
+    /* Neon Orange accent */
     --accent: 21 100% 50%;
     --accent-foreground: 0 0% 100%;
 
@@ -261,6 +70,12 @@
     --border: 0 0% 15%;
     --input: 0 0% 10%;
     --ring: 0 0% 100%;
+  }
+
+  /* Typography overrides */
+  h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -276,6 +91,15 @@
 
 @layer utilities {
   .glass-panel {
+    @apply bg-background/40 backdrop-blur-xl border border-border/30 shadow-2xl;
+  }
+
+  /* Light mode glass panel override for better contrast */
+  :root .glass-panel {
+    @apply bg-background/70 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  .dark .glass-panel {
     @apply bg-background/40 backdrop-blur-xl border border-white/10 shadow-2xl;
   }
 

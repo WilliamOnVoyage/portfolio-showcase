@@ -24,20 +24,20 @@ export function BlogSection({ posts }: BlogSectionProps) {
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-l-4 border-primary pl-6">
         <div className="space-y-2">
-          <h2 className="text-sm font-mono tracking-widest text-primary uppercase flex items-center gap-2">
+          <h2 className="text-sm font-mono tracking-widest text-secondary dark:text-primary uppercase flex items-center gap-2 font-bold">
             <BookOpen className="w-4 h-4" /> 02 / Insights
           </h2>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight">
+          <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
             Technical Writings & Architecture Logs
           </h3>
-          <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">
+          <p className="text-foreground/80 dark:text-muted-foreground font-mono text-sm uppercase max-w-xl">
             Deep dives into AI infrastructure, smart contract verifiers, real-time inference, and 0-to-1 systems engineering.
           </p>
         </div>
 
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-white/20 hover:border-secondary hover:text-secondary font-mono text-xs uppercase tracking-widest transition-all bg-transparent self-start md:self-auto shrink-0 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-border/60 dark:border-white/20 hover:border-secondary hover:text-secondary font-mono text-xs uppercase tracking-widest transition-all bg-transparent self-start md:self-auto shrink-0 shadow-sm"
         >
           <span>View All Articles</span>
           <ArrowRight className="w-4 h-4" />
