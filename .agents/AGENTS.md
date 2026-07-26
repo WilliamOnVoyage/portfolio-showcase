@@ -12,4 +12,4 @@ The single source of truth for repository architecture, development workflow, an
 3. **`PORTFOLIO.json` Contract Compliance**: Respect the contract schema in `docs/PORTFOLIO_SCHEMA.md` for external repo ingestion.
 4. **Automated Build & Type Check**: Always run `npm run build` to verify static compilation and type validity before ending your turn.
 5. **Mandatory DOM & Visual Verification**: Before asking to commit or push code changes, launch `npm run dev` and perform visual DOM verification across affected routes (`/`, `/blog`, `/blog/[slug]`) in both Light and Dark Mode. Prefer native Safari (`open -a Safari`) or lightweight inspection to prevent heavy Chromium CPU/RAM consumption. If full automated DOM recording or interaction is needed, use `browser_subagent` to ensure quality.
-6. **Explicit User Approval for Push**: Always obtain explicit user confirmation before running `git push` to remote repositories.
+6. **Hold Pushing Until Explicit Command**: Never ask to push or execute `git push` automatically after completing a task. Always hold commits locally until the user gives an explicit command to push.

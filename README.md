@@ -146,5 +146,5 @@ Both human developers and AI coding assistants (Antigravity, Cursor, Claude Code
 2. **Documentation Integrity**: Keep [`README.md`](file:///Users/zml/Workspace/portfolio-showcase/README.md) updated whenever adding routes, components, schemas, or CLI scripts.
 3. **Taxonomy & Contract Compliance**: Always edit `src/data/project-overrides.json` and run `npm run fetch-data` when modifying repo metadata.
 4. **Automated Compilation Check**: Always verify `npm run build` passes with zero type or lint errors before ending your turn.
-5. **Explicit Push Approval**: Always obtain explicit user confirmation before running `git push` to remote repositories.
+5. **Hold Pushing Until Explicit Command**: Never ask to push or execute `git push` automatically. Always hold commits locally until the user gives an explicit command to push.
 
