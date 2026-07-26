@@ -16,14 +16,20 @@ const BlackHoleBackground = dynamic(
   { ssr: false }
 );
 
+const MermaidDiagram = dynamic(
+  () => import("@/components/MermaidDiagram").then((mod) => mod.MermaidDiagram),
+  { ssr: false }
+);
+
 interface ArticleContentProps {
   post: BlogPost;
 }
 
 export function ArticleContent({ post }: ArticleContentProps) {
-  // Extract high-level H2 headings for Table of Contents
+  // Extract high-level H2 headings for Table of Contents (excluding code blocks)
   const headings = useMemo(() => {
-    const lines = post.content.split("\n");
+    const contentWithoutCodeBlocks = post.content.replace(/```[\s\S]*?```/g, "");
+    const lines = contentWithoutCodeBlocks.split("\n");
     return lines
       .filter((line) => line.startsWith("## "))
       .map((line) => {
@@ -173,30 +179,47 @@ export function ArticleContent({ post }: ArticleContentProps) {
                   </ol>
                 ),
                 code: ({
-                  inline,
+                  className,
                   children,
                 }: {
-                  inline?: boolean;
+                  className?: string;
                   children?: React.ReactNode;
                 }) => {
-                  if (inline) {
+                  const match = /language-(\w+)/.exec(className || "");
+                  const isMermaid = match && match[1] === "mermaid";
+                  const rawContent = String(children).replace(/\n$/, "");
+
+                  if (isMermaid) {
+                    return <MermaidDiagram chart={rawContent} />;
+                  }
+
+                  const isInline = !className;
+
+                  if (isInline) {
+                    const cleanText =
+                      typeof children === "string"
+                        ? children.replace(/^`+|`+$/g, "")
+                        : children;
                     return (
                       <code className="font-mono text-xs md:text-sm bg-secondary/15 dark:bg-white/10 text-secondary dark:text-primary px-1.5 py-0.5 rounded border border-secondary/30 dark:border-white/10 font-semibold">
-                        {children}
+                        {cleanText}
                       </code>
                     );
                   }
+
                   return (
                     <code className="font-mono text-xs md:text-sm text-foreground bg-transparent p-0 border-none font-normal leading-relaxed">
                       {children}
                     </code>
                   );
                 },
-                pre: ({ children }) => (
-                  <pre className="font-mono text-xs md:text-sm bg-transparent border border-border/60 dark:border-white/15 p-4.5 rounded-xl overflow-x-auto my-6 text-foreground shadow-sm">
-                    {children}
-                  </pre>
-                ),
+                pre: ({ children }: { children?: React.ReactNode }) => {
+                  return (
+                    <pre className="font-mono text-xs md:text-sm bg-transparent border border-border/60 dark:border-white/15 p-4.5 rounded-xl overflow-x-auto my-6 text-foreground shadow-sm">
+                      {children}
+                    </pre>
+                  );
+                },
                 blockquote: ({ children }) => (
                   <blockquote className="border-l-4 border-secondary dark:border-primary pl-4 py-2 my-4 italic text-foreground/85 dark:text-muted-foreground bg-secondary/5 dark:bg-primary/5 rounded-r-lg font-mono text-sm border-y border-r border-secondary/15 dark:border-primary/15">
                     {children}

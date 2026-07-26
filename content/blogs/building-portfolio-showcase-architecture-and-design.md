@@ -27,28 +27,10 @@ Maintaining an up-to-date personal portfolio website is notorious for developer 
 
 The system operates via a 3-tier data pipeline:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│ TRACKING REPOSITORIES                                                  │
-│ • Public / Private GitHub Repositories                                 │
-│ • Root PORTFOLIO.json Contract File (Narrative: tagline, liveUrl, etc.)│
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ BUILD-TIME INGESTION PIPELINE (scripts/fetch-github-data.ts)           │
-│ • Octokit / REST API fetch for owner repos                             │
-│ • Direct raw fetch of root PORTFOLIO.json                              │
-│ • Merge with local taxonomy overrides (src/data/project-overrides.json) │
-│ • Download & optimize repo thumbnails to public/images/projects/       │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ STATIC SITE GENERATION (Next.js 14 SSG + Markdown Compiler)            │
-│ • Output compiled src/data/projects.json & src/data/blogs.json         │
-│ • Pre-render static pages (/ , /blog, /blog/[slug])                     │
-└────────────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    A["TRACKING REPOSITORIES<br/>• Public / Private GitHub Repositories<br/>• Root PORTFOLIO.json Contract File"] --> B["BUILD-TIME INGESTION PIPELINE (scripts/fetch-github-data.ts)<br/>• Octokit REST API fetch for owner repos<br/>• Direct raw fetch of root PORTFOLIO.json<br/>• Merge local taxonomy overrides (src/data/project-overrides.json)<br/>• Download & optimize repo thumbnails"]
+    B --> C["STATIC SITE GENERATION (Next.js 14 SSG + Markdown Compiler)<br/>• Output compiled src/data/projects.json & blogs.json<br/>• Pre-render static pages (/, /blog, /blog/[slug])"]
 ```
 
 ---
