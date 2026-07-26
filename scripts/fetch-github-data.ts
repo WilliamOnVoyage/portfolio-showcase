@@ -50,7 +50,7 @@ async function main() {
     console.log('Fetching repositories...');
 
     // 1. Load Overrides
-    const overridesPath = path.join(process.cwd(), 'data', 'project-overrides.json');
+    const overridesPath = path.join(process.cwd(), 'src', 'data', 'project-overrides.json');
     let overrides: Record<string, any> = {};
     try {
         const data = await fs.readFile(overridesPath, 'utf8');
