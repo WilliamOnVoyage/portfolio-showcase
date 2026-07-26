@@ -21,21 +21,39 @@ interface ArticleContentProps {
 }
 
 export function ArticleContent({ post }: ArticleContentProps) {
-  // Extract Table of Contents headings from Markdown content
+  // Extract high-level H2 headings for Table of Contents
   const headings = useMemo(() => {
     const lines = post.content.split("\n");
     return lines
-      .filter((line) => line.startsWith("## ") || line.startsWith("### "))
+      .filter((line) => line.startsWith("## "))
       .map((line) => {
-        const level = line.startsWith("### ") ? 3 : 2;
-        const text = line.replace(/^###?\s+/, "");
+        const rawText = line.replace(/^##\s+/, "");
+        const text = rawText.replace(/`/g, ""); // Strip raw backticks from TOC text
         const id = text
           .toLowerCase()
           .replace(/[^\w\s-]/g, "")
           .replace(/\s+/g, "-");
-        return { level, text, id };
+        return { text, id };
       });
   }, [post.content]);
+
+  // Helper to extract clean plain text from React children tree
+  const extractPlainText = (node: React.ReactNode): string => {
+    if (typeof node === "string") return node;
+    if (typeof node === "number") return String(node);
+    if (Array.isArray(node)) return node.map(extractPlainText).join("");
+    if (
+      node &&
+      typeof node === "object" &&
+      "props" in node &&
+      (node as { props?: { children?: React.ReactNode } }).props?.children
+    ) {
+      return extractPlainText(
+        (node as { props: { children?: React.ReactNode } }).props.children
+      );
+    }
+    return "";
+  };
 
   return (
     <main className="min-h-screen text-foreground relative overflow-hidden pt-16">
@@ -115,22 +133,22 @@ export function ArticleContent({ post }: ArticleContentProps) {
             <ReactMarkdown
               components={{
                 h2: ({ children }) => {
-                  const text = String(children);
-                  const id = text
+                  const plainText = extractPlainText(children).replace(/`/g, "");
+                  const id = plainText
                     .toLowerCase()
                     .replace(/[^\w\s-]/g, "")
                     .replace(/\s+/g, "-");
                   return (
                     <h2
                       id={id}
-                      className="text-2xl font-bold tracking-tight border-b border-border/50 dark:border-white/10 pb-3 mt-8 mb-4 text-foreground flex items-center gap-2"
+                      className="text-2xl font-bold tracking-tight border-b border-border/50 dark:border-white/10 pb-3 mt-10 mb-4 text-foreground scroll-mt-24"
                     >
-                      <span className="text-secondary dark:text-primary">#</span> {children}
+                      {children}
                     </h2>
                   );
                 },
                 h3: ({ children }) => (
-                  <h3 className="text-xl font-bold tracking-tight mt-6 mb-3 text-foreground">
+                  <h3 className="text-xl font-bold tracking-tight mt-6 mb-3 text-foreground scroll-mt-24">
                     {children}
                   </h3>
                 ),
@@ -154,13 +172,28 @@ export function ArticleContent({ post }: ArticleContentProps) {
                     {children}
                   </ol>
                 ),
-                code: ({ children }) => (
-                  <code className="font-mono text-sm bg-secondary/10 dark:bg-white/10 text-secondary dark:text-secondary px-1.5 py-0.5 rounded border border-secondary/20 dark:border-white/10 font-semibold">
-                    {children}
-                  </code>
-                ),
+                code: ({
+                  inline,
+                  children,
+                }: {
+                  inline?: boolean;
+                  children?: React.ReactNode;
+                }) => {
+                  if (inline) {
+                    return (
+                      <code className="font-mono text-xs md:text-sm bg-secondary/15 dark:bg-white/10 text-secondary dark:text-primary px-1.5 py-0.5 rounded border border-secondary/30 dark:border-white/10 font-semibold">
+                        {children}
+                      </code>
+                    );
+                  }
+                  return (
+                    <code className="font-mono text-xs md:text-sm text-foreground bg-transparent p-0 border-none font-normal leading-relaxed">
+                      {children}
+                    </code>
+                  );
+                },
                 pre: ({ children }) => (
-                  <pre className="font-mono text-xs md:text-sm bg-slate-900 text-slate-100 dark:bg-black/90 dark:text-foreground border border-slate-700 dark:border-white/10 p-4 rounded-xl overflow-x-auto my-6 shadow-md">
+                  <pre className="font-mono text-xs md:text-sm bg-transparent border border-border/60 dark:border-white/15 p-4.5 rounded-xl overflow-x-auto my-6 text-foreground shadow-sm">
                     {children}
                   </pre>
                 ),
@@ -192,9 +225,7 @@ export function ArticleContent({ post }: ArticleContentProps) {
                     <a
                       key={idx}
                       href={`#${h.id}`}
-                      className={`block text-foreground/75 dark:text-muted-foreground hover:text-secondary dark:hover:text-primary transition-colors py-1 ${
-                        h.level === 3 ? "pl-4 text-[11px]" : "font-semibold"
-                      }`}
+                      className="block text-foreground/75 dark:text-muted-foreground hover:text-secondary dark:hover:text-primary transition-colors py-1 font-semibold"
                     >
                       • {h.text}
                     </a>
