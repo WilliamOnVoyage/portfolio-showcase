@@ -135,3 +135,15 @@ Any tracking repository can include a root `PORTFOLIO.json` file:
 }
 ```
 See [`docs/PORTFOLIO_SCHEMA.md`](file:///Users/zml/Workspace/portfolio-showcase/docs/PORTFOLIO_SCHEMA.md) for full contract details.
+
+---
+
+## Mandatory AI Agent Guidelines & Verification
+
+All AI coding assistants working in this repository **MUST** strictly follow the rules defined in [`.agents/AGENTS.md`](file:///Users/zml/Workspace/portfolio-showcase/.agents/AGENTS.md):
+
+1. **Mandatory DOM Verification**: Before committing or pushing code changes, you **MUST** launch `npm run dev` and visually verify rendered DOM elements (using browser automation/subagent) across routes (`/`, `/blog`, `/blog/[slug]`) in both Light and Dark mode.
+2. **Documentation Integrity**: Keep [`README.md`](file:///Users/zml/Workspace/portfolio-showcase/README.md) updated whenever adding routes, components, schemas, or CLI scripts.
+3. **Taxonomy & Contract Compliance**: Always edit `src/data/project-overrides.json` and run `npm run fetch-data` when modifying repo metadata.
+4. **Automated Compilation Check**: Always verify `npm run build` passes with zero type or lint errors before ending your turn.
+

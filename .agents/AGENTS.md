@@ -18,3 +18,4 @@ This file defines mandatory rules for AI coding assistants (Antigravity, Cursor,
 2. **Preserve Taxonomy Overrides**: Always edit `src/data/project-overrides.json` when adding custom categories, tech stacks, or featured project metadata.
 3. **Run Data Generation**: After updating project overrides, run `npm run fetch-data` to regenerate `src/data/projects.json`.
 4. **Automated Build & Lint Check**: Never end your turn without running `npm run build` to verify static compilation and type validity.
+5. **Mandatory DOM & Visual Verification**: Before committing or pushing code changes, you **MUST** launch the local dev server (`npm run dev`) and perform visual DOM verification (using `browser_subagent` or browser inspection) across affected routes (e.g. `/`, `/blog`, `/blog/[slug]`) in both Light Mode and Dark Mode to verify layout integrity, contrast, and element rendering.
