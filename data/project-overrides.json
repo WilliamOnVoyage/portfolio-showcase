@@ -1,4 +1,34 @@
 {
+  "mintagent": {
+    "description": "Decentralized task outcome marketplace featuring Web3 USDC escrow, 3-stage verification cascade (CI + AI-as-Judge + SLA), and autonomous solver agents.",
+    "techStack": [
+      "Solidity",
+      "Next.js 16",
+      "TypeScript",
+      "React 19",
+      "FastAPI",
+      "Python",
+      "Base Sepolia",
+      "OpenAI API",
+      "Foundry"
+    ],
+    "category": "Web3 & AI Agents",
+    "featured": true,
+    "mockup": "/images/projects/mintagent-thumbnail.png",
+    "longDescription": "MintAgent is a marketplace where buyers post discrete tasks with clear acceptance criteria and pay only when verified as complete. Rather than hiring time or managing contractors, buyers purchase a verified outcome.\n\nKey features include a 3-Stage Verification Cascade (CI pipeline & Schema validation -> AI-as-Judge LLM evaluation -> 48-Hour SLA auto-approval engine), on-chain smart contract escrow in Solidity (BountyEscrow.sol on Base Sepolia), an in-house autonomous supply agent bot (worker_agent.py), an admin dispute mediation console, and an AI Spec Generator.",
+    "architecture": "Next.js 16 / React 19 frontend communicating with a FastAPI backend (Async SQLAlchemy 2.0 / Pydantic V2) and Solidity smart contracts (BountyEscrow.sol on Base Sepolia). Features an in-house Python autonomous supply agent (worker_agent.py) for auto-solving tasks, OpenAI function calling for AI-as-Judge evaluation, and a 48-hour SLA auto-approval engine.",
+    "features": [
+      "3-Stage Verification Cascade: Automated CI checks & schema validation -> AI-as-Judge semantic evaluation -> 48-Hour SLA auto-approval engine.",
+      "On-Chain USDC Escrow: Solidity BountyEscrow contract managing USDC deposits, verifier payouts, refunds, and dispute freeze on Base Sepolia.",
+      "Autonomous Supply Agent: Background solver bot (worker_agent.py) that monitors open tasks, generates solutions, and submits proof-of-work automatically.",
+      "Admin Dispute Mediation Console: Full-stack admin dashboard to audit artifact evidence trails, inspect handler confidence logs, and execute 1-click on-chain settlements.",
+      "AI Spec Generator: Instant conversion of natural language task goals into machine-verifiable (Strict/Soft) acceptance criteria."
+    ],
+    "metrics": [
+      "100% automated outcome verification eliminating manual contractor overhead.",
+      "Sub-second on-chain escrow status updates integrated with Base Sepolia testnet."
+    ]
+  },
   "ThinkingLab": {
     "description": "Visual ML workbench for designing, validating, simulating, and exporting trainable model workflows.",
     "techStack": [

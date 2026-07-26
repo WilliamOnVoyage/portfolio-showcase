@@ -9,7 +9,7 @@
     "stargazers_count": 0,
     "forks_count": 0,
     "open_issues_count": 0,
-    "updated_at": "2026-06-13T15:51:41Z",
+    "updated_at": "2026-07-26T16:49:08Z",
     "is_private": true,
     "topics": [],
     "techStack": [
@@ -42,6 +42,92 @@
     "publicDescription": "ThinkingLab is a visual ML workbench that lets you drag-and-drop neural network architectures onto an infinite canvas, simulate tensor flow in real time, and launch GPU training on AWS with one click. No boilerplate, no infrastructure — just build and train."
   },
   {
+    "id": "mintagent",
+    "name": "mintagent",
+    "description": "A decentralized outcome marketplace where buyers pay only for verified task completions via Web3 USDC escrow and AI-assisted verification.",
+    "html_url": null,
+    "homepage": null,
+    "language": "Solidity",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "updated_at": "2026-07-24T04:58:32Z",
+    "is_private": true,
+    "topics": [],
+    "techStack": [
+      "Solidity",
+      "Next.js 16",
+      "TypeScript",
+      "React 19",
+      "FastAPI",
+      "Python",
+      "Base Sepolia",
+      "OpenAI API",
+      "Foundry"
+    ],
+    "category": "Web3 & AI Agents",
+    "featured": true,
+    "mockup": "/images/projects/mintagent-thumbnail.png",
+    "longDescription": "# MintAgent — Verified Task Outcome Marketplace\n\nMintAgent is a marketplace where buyers post discrete tasks with clear acceptance criteria and pay only when verified as complete. Rather than hiring time or managing contractors, buyers purchase a **verified outcome**.\n\n## Key Capabilities & Technical Architecture\n\n- **3-Stage Verification Cascade**: Orchestrates Stage 1 automated checks (GitHub CI pipeline & Schema validation) → Stage 2 AI-as-Judge (LLM semantic evaluation) → Stage 3 Buyer Manual Review backed by an automated **48-Hour SLA auto-approval engine**.\n- **On-Chain Smart Contract Escrow**: Solidity `BountyEscrow.sol` deployed on Base Sepolia managing USDC deposits, platform verifier releases, refunds, and dispute freeze.\n- **In-House Autonomous Supply Agent**: Background solver bot (`worker_agent.py`) that monitors open tasks, generates solutions, and submits proof of work automatically.\n- **Admin Dispute Mediation Console**: Full-stack admin dashboard (`/admin/disputes`) to audit artifact evidence trails, inspect handler confidence logs, and execute 1-click on-chain settlements.\n- **AI Spec Generator**: Instant conversion of natural language task goals into machine-verifiable (Strict/Soft) acceptance criteria.\n\n## Technology Stack\n- **Frontend**: Next.js 16, TypeScript, React 19, Vanilla CSS Modules (Glassmorphism & Dark Mode).\n- **Backend**: FastAPI, Async SQLAlchemy 2.0, Alembic, Pydantic V2, Pytest async suite.\n- **Blockchain**: Solidity (OpenZeppelin AccessControl, ReentrancyGuard), Foundry test framework, Web3.py, Base Sepolia Testnet.\n- **Integrations**: OpenAI API (AI-Judge & Spec Generation), GitHub REST API & Webhook events.",
+    "hidden": false,
+    "architecture": "Next.js 16 / React 19 frontend communicating with a FastAPI backend (Async SQLAlchemy 2.0 / Pydantic V2) and Solidity smart contracts (BountyEscrow.sol on Base Sepolia). Features an in-house Python autonomous supply agent (worker_agent.py) for auto-solving tasks, OpenAI function calling for AI-as-Judge evaluation, and a 48-hour SLA auto-approval engine.",
+    "features": [
+      "3-Stage Verification Cascade: Automated CI checks & schema validation -> AI-as-Judge semantic evaluation -> 48-Hour SLA auto-approval engine.",
+      "On-Chain USDC Escrow: Solidity BountyEscrow contract managing USDC deposits, verifier payouts, refunds, and dispute freeze on Base Sepolia.",
+      "Autonomous Supply Agent: Background solver bot (worker_agent.py) that monitors open tasks, generates solutions, and submits proof-of-work automatically.",
+      "Admin Dispute Mediation Console: Full-stack admin dashboard to audit artifact evidence trails, inspect handler confidence logs, and execute 1-click on-chain settlements.",
+      "AI Spec Generator: Instant conversion of natural language task goals into machine-verifiable (Strict/Soft) acceptance criteria."
+    ],
+    "metrics": [
+      "100% automated outcome verification eliminating manual contractor overhead.",
+      "Sub-second on-chain escrow status updates integrated with Base Sepolia testnet."
+    ],
+    "tagline": "A decentralized outcome marketplace where buyers pay only for verified task completions via Web3 USDC escrow and AI-assisted verification.",
+    "demoUrl": "https://github.com/WilliamOnVoyage/mintagent",
+    "liveUrl": "http://localhost:3000",
+    "publicDescription": "# MintAgent — Verified Task Outcome Marketplace\n\nMintAgent is a marketplace where buyers post discrete tasks with clear acceptance criteria and pay only when verified as complete. Rather than hiring time or managing contractors, buyers purchase a **verified outcome**.\n\n## Key Capabilities & Technical Architecture\n\n- **3-Stage Verification Cascade**: Orchestrates Stage 1 automated checks (GitHub CI pipeline & Schema validation) → Stage 2 AI-as-Judge (LLM semantic evaluation) → Stage 3 Buyer Manual Review backed by an automated **48-Hour SLA auto-approval engine**.\n- **On-Chain Smart Contract Escrow**: Solidity `BountyEscrow.sol` deployed on Base Sepolia managing USDC deposits, platform verifier releases, refunds, and dispute freeze.\n- **In-House Autonomous Supply Agent**: Background solver bot (`worker_agent.py`) that monitors open tasks, generates solutions, and submits proof of work automatically.\n- **Admin Dispute Mediation Console**: Full-stack admin dashboard (`/admin/disputes`) to audit artifact evidence trails, inspect handler confidence logs, and execute 1-click on-chain settlements.\n- **AI Spec Generator**: Instant conversion of natural language task goals into machine-verifiable (Strict/Soft) acceptance criteria.\n\n## Technology Stack\n- **Frontend**: Next.js 16, TypeScript, React 19, Vanilla CSS Modules (Glassmorphism & Dark Mode).\n- **Backend**: FastAPI, Async SQLAlchemy 2.0, Alembic, Pydantic V2, Pytest async suite.\n- **Blockchain**: Solidity (OpenZeppelin AccessControl, ReentrancyGuard), Foundry test framework, Web3.py, Base Sepolia Testnet.\n- **Integrations**: OpenAI API (AI-Judge & Spec Generation), GitHub REST API & Webhook events."
+  },
+  {
+    "id": "World-of-Warships-Stats-Analysis",
+    "name": "World-of-Warships-Stats-Analysis",
+    "description": "Data acquisition, modeling, and analysis pipeline for predicting player performance in World of Warships.",
+    "html_url": "https://github.com/WilliamOnVoyage/World-of-Warships-Stats-Analysis",
+    "homepage": "https://williamonvoyage.github.io/World-of-Warships-Stats-Analysis/",
+    "language": "TypeScript",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 7,
+    "updated_at": "2026-06-30T05:47:48Z",
+    "is_private": false,
+    "topics": [
+      "api",
+      "data-analysis",
+      "database",
+      "python"
+    ],
+    "techStack": [
+      "TypeScript"
+    ],
+    "category": "Data Science",
+    "featured": true,
+    "mockup": null,
+    "longDescription": null,
+    "hidden": false,
+    "architecture": "Python data ingestion pipeline hitting Wargaming APIs, storing raw JSON logs into a SQL database for offline analysis using Pandas and Scikit-learn.",
+    "features": [
+      "Comprehensive match-level telemetry extraction from reverse-engineered API endpoints.",
+      "Automated rate-limiting and exponential backoff scaling to millions of API requests."
+    ],
+    "metrics": [
+      "Ingested and analyzed over 1TB of raw player match data.",
+      "Trained a predictive model achieving 75% accuracy on match outcomes based on pre-game stats."
+    ],
+    "tagline": null,
+    "demoUrl": null,
+    "liveUrl": null,
+    "publicDescription": null
+  },
+  {
     "id": "portfolio-showcase",
     "name": "portfolio-showcase",
     "description": null,
@@ -51,7 +137,7 @@
     "stargazers_count": 1,
     "forks_count": 0,
     "open_issues_count": 0,
-    "updated_at": "2026-06-13T05:18:55Z",
+    "updated_at": "2026-06-17T18:44:28Z",
     "is_private": false,
     "topics": [],
     "techStack": [
@@ -812,46 +898,6 @@
     "architecture": null,
     "features": [],
     "metrics": [],
-    "tagline": null,
-    "demoUrl": null,
-    "liveUrl": null,
-    "publicDescription": null
-  },
-  {
-    "id": "World-of-Warships-Stats-Analysis",
-    "name": "World-of-Warships-Stats-Analysis",
-    "description": "Data acquisition, modeling, and analysis pipeline for predicting player performance in World of Warships.",
-    "html_url": "https://github.com/WilliamOnVoyage/World-of-Warships-Stats-Analysis",
-    "homepage": "https://williamonvoyage.github.io/World-of-Warships-Stats-Analysis/",
-    "language": "HTML",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "open_issues_count": 7,
-    "updated_at": "2020-01-26T05:00:50Z",
-    "is_private": false,
-    "topics": [
-      "api",
-      "data-analysis",
-      "database",
-      "python"
-    ],
-    "techStack": [
-      "HTML"
-    ],
-    "category": "Data Science",
-    "featured": true,
-    "mockup": null,
-    "longDescription": null,
-    "hidden": false,
-    "architecture": "Python data ingestion pipeline hitting Wargaming APIs, storing raw JSON logs into a SQL database for offline analysis using Pandas and Scikit-learn.",
-    "features": [
-      "Comprehensive match-level telemetry extraction from reverse-engineered API endpoints.",
-      "Automated rate-limiting and exponential backoff scaling to millions of API requests."
-    ],
-    "metrics": [
-      "Ingested and analyzed over 1TB of raw player match data.",
-      "Trained a predictive model achieving 75% accuracy on match outcomes based on pre-game stats."
-    ],
     "tagline": null,
     "demoUrl": null,
     "liveUrl": null,
