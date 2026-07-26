@@ -8,7 +8,7 @@ export function ExperienceTimeline() {
     return (
         <section id="experience" className="w-full space-y-12">
             <div className="flex flex-col gap-2 border-l-4 border-primary pl-6 mb-16">
-                <h2 className="text-sm font-mono tracking-widest text-primary uppercase">03 / Timeline</h2>
+                <h2 className="text-sm font-mono tracking-widest text-primary uppercase">04 / Timeline</h2>
                 <h3 className="text-3xl md:text-5xl font-bold tracking-tight">Professional Experience</h3>
                 <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Career trajectory and primary directives.</p>
             </div>

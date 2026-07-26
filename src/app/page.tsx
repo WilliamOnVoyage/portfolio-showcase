@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { PublicationsList } from "@/components/PublicationsList";
 import { NavBar } from "@/components/NavBar";
+import { BlogSection } from "@/components/BlogSection";
+import { getAllPosts } from "@/lib/blogs";
 
 const BlackHoleBackground = dynamic(() => import("@/components/BlackHole").then(mod => mod.BlackHoleBackground), {
   ssr: false,
@@ -20,6 +22,7 @@ const BlackHoleBackground = dynamic(() => import("@/components/BlackHole").then(
 export default function Home() {
   const allProjects = projectsData as Project[];
   const projects = allProjects.filter(p => !p.hidden);
+  const blogPosts = getAllPosts();
 
   // Define Featured Projects explicitly via override `featured: true` or manual check
   const featured = projects.filter(p => p.featured);
@@ -35,7 +38,7 @@ export default function Home() {
       <ThemeSwitcher />
 
       <div className="container mx-auto px-4 py-16 space-y-32 z-10 relative">
-        {/* Featured Section */}
+        {/* 01 / Vanguard Section */}
         {featured.length > 0 && (
           <motion.section
             id="featured"
@@ -60,11 +63,14 @@ export default function Home() {
           </motion.section>
         )}
 
+        {/* 02 / Insights Section (Blog Teaser) */}
+        <BlogSection posts={blogPosts} />
+
         <PublicationsList />
 
         <ExperienceTimeline />
 
-        {/* Archive Section with Filter */}
+        {/* 05 / Archive Section with Filter */}
         <motion.section
           id="archive"
           className="space-y-12"
@@ -74,7 +80,7 @@ export default function Home() {
           transition={{ duration: 0.7 }}
         >
           <div className="flex flex-col gap-2 border-l-4 border-white/20 pl-6">
-            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">04 / Database</h2>
+            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">05 / Database</h2>
             <h3 className="text-3xl md:text-5xl font-bold tracking-tight">The Archive</h3>
             <p className="text-muted-foreground font-mono text-sm uppercase max-w-xl">Comprehensive system logs of all minor projects and exercises.</p>
           </div>

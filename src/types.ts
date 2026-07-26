@@ -42,3 +42,20 @@ export interface ProjectOverride {
   longDescription?: string | null;
   hidden?: boolean;
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  featured?: boolean;
+  content: string;
+  author?: {
+    name: string;
+    avatar?: string;
+    role?: string;
+  };
+}
+
