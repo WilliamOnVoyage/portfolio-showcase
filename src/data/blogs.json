@@ -5,7 +5,12 @@
     "description": "How we combined GitHub CI pipelines, LLM-as-Judge semantic evaluation, 48-hour SLA auto-approvals, and Base Sepolia USDC smart contract escrows into a decentralized outcome marketplace.",
     "date": "2026-07-25",
     "readTime": "8 min read",
-    "tags": ["AI Infrastructure", "Solidity", "Web3", "Next.js"],
+    "tags": [
+      "AI Infrastructure",
+      "Solidity",
+      "Web3",
+      "Next.js"
+    ],
     "featured": true,
     "author": {
       "name": "Moliang Zhou",
@@ -19,7 +24,13 @@
     "description": "Architectural strategies for low-latency LLM serving, dynamic batching with vLLM & Triton Inference Server, KV cache optimization, and multi-GPU tensor parallelism.",
     "date": "2026-07-18",
     "readTime": "10 min read",
-    "tags": ["AI Infrastructure", "PyTorch", "vLLM", "Triton", "Ray"],
+    "tags": [
+      "AI Infrastructure",
+      "PyTorch",
+      "vLLM",
+      "Triton",
+      "Ray"
+    ],
     "featured": false,
     "author": {
       "name": "Moliang Zhou",
@@ -33,7 +44,12 @@
     "description": "How to design unified machine learning platforms that scale across dozens of engineering teams without creating platform friction or developer lock-in.",
     "date": "2026-07-02",
     "readTime": "6 min read",
-    "tags": ["Architecture", "System Design", "MLOps", "Engineering Leadership"],
+    "tags": [
+      "Architecture",
+      "System Design",
+      "MLOps",
+      "Engineering Leadership"
+    ],
     "featured": false,
     "author": {
       "name": "Moliang Zhou",

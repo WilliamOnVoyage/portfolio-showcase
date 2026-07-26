@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tsx scripts/compile-blogs.ts && next dev",
+    "build": "tsx scripts/compile-blogs.ts && next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch-data": "tsx scripts/fetch-github-data.ts"
+    "compile-blogs": "tsx scripts/compile-blogs.ts",
+    "fetch-data": "tsx scripts/compile-blogs.ts && tsx scripts/fetch-github-data.ts"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
@@ -15,6 +16,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.33.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.563.0",
     "next": "14.2.35",
     "next-themes": "^0.4.6",
