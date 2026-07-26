@@ -142,8 +142,9 @@ See [`docs/PORTFOLIO_SCHEMA.md`](file:///Users/zml/Workspace/portfolio-showcase/
 
 Both human developers and AI coding assistants (Antigravity, Cursor, Claude Code, Windsurf) working in this repository **MUST** follow these rules (also referenced in [`.agents/AGENTS.md`](file:///Users/zml/Workspace/portfolio-showcase/.agents/AGENTS.md)):
 
-1. **Mandatory DOM Verification**: Before committing or pushing code changes, launch `npm run dev` and visually verify rendered DOM elements (using browser automation/subagent) across routes (`/`, `/blog`, `/blog/[slug]`) in both Light and Dark mode.
+1. **Mandatory DOM Verification**: Before asking to commit or push code changes, launch `npm run dev` and visually verify rendered DOM elements (using browser automation/subagent) across routes (`/`, `/blog`, `/blog/[slug]`) in both Light and Dark mode.
 2. **Documentation Integrity**: Keep [`README.md`](file:///Users/zml/Workspace/portfolio-showcase/README.md) updated whenever adding routes, components, schemas, or CLI scripts.
 3. **Taxonomy & Contract Compliance**: Always edit `src/data/project-overrides.json` and run `npm run fetch-data` when modifying repo metadata.
 4. **Automated Compilation Check**: Always verify `npm run build` passes with zero type or lint errors before ending your turn.
+5. **Explicit Push Approval**: Always obtain explicit user confirmation before running `git push` to remote repositories.
 
