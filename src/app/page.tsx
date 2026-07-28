@@ -89,7 +89,7 @@ export default function Home() {
       </div>
 
       <footer className="py-12 text-center text-xs font-mono uppercase tracking-widest text-muted-foreground border-t border-white/10 relative z-10 glass-panel mt-32">
-        <p>SYSTEM.HALT // © {new Date().getFullYear()} WILLIAM_ON_VOYAGE. ALL DATA ENCRYPTED.</p>
+        <p>SYSTEM.HALT // © {new Date().getFullYear()} MOLIANG_ZHOU. ALL DATA ENCRYPTED.</p>
       </footer>
     </main>
   );

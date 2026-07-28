@@ -158,7 +158,7 @@ export default function BlogIndexPage() {
 
       <footer className="py-12 text-center text-xs font-mono uppercase tracking-widest text-foreground/60 dark:text-muted-foreground border-t border-border/50 dark:border-white/10 relative z-10 glass-panel mt-32">
         <p>
-          SYSTEM.HALT // © {new Date().getFullYear()} WILLIAM_ON_VOYAGE. ALL DATA ENCRYPTED.
+          SYSTEM.HALT // © {new Date().getFullYear()} MOLIANG_ZHOU. ALL DATA ENCRYPTED.
         </p>
       </footer>
     </main>
