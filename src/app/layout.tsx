@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "William's Portfolio | FinTech & AI Engineer",
-  description: "Showcase of projects in FinTech, AI, and scalable systems.",
+  title: "Moliang",
+  description: "Moliang Zhou — Machine Learning Platform & AI Infrastructure.",
 };
 
 export default function RootLayout({
