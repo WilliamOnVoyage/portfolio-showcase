@@ -1,32 +1,64 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-bg {
+      fill: #F8FAFC;
+      stroke: #CBD5E1;
+    }
+    .prompt-chevron {
+      stroke: url(#promptGradLight);
+    }
+    .cursor-block {
+      stroke: url(#cursorGradLight);
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-bg {
+        fill: #0F172A;
+        stroke: #334155;
+      }
+      .prompt-chevron {
+        stroke: url(#promptGradDark);
+      }
+      .cursor-block {
+        stroke: url(#cursorGradDark);
+      }
+    }
+  </style>
+
   <defs>
-    <!-- Background & Gradient Definitions -->
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#1E293B"/>
+    <!-- Light Mode Gradients -->
+    <linearGradient id="promptGradLight" x1="120" y1="120" x2="360" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
-    <linearGradient id="promptGrad" x1="120" y1="120" x2="360" y2="360" gradientUnits="userSpaceOnUse">
+    <linearGradient id="cursorGradLight" x1="270" y1="367" x2="385" y2="367" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <!-- Dark Mode Gradients -->
+    <linearGradient id="promptGradDark" x1="120" y1="120" x2="360" y2="360" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#3B82F6"/>
       <stop offset="50%" stop-color="#6366F1"/>
       <stop offset="100%" stop-color="#10B981"/>
     </linearGradient>
-    <linearGradient id="cursorGrad" x1="270" y1="367" x2="385" y2="367" gradientUnits="userSpaceOnUse">
+    <linearGradient id="cursorGradDark" x1="270" y1="367" x2="385" y2="367" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#10B981"/>
       <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
+
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="12" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
 
-  <!-- Squircle Container Badge -->
-  <rect x="32" y="32" width="448" height="448" rx="96" fill="url(#bgGrad)" stroke="#334155" stroke-width="8"/>
-  <rect x="32" y="32" width="448" height="448" rx="96" fill="none" stroke="url(#promptGrad)" stroke-width="4" stroke-opacity="0.4"/>
+  <!-- Container Squircle Badge (Adaptive Light/Dark Fill & Border) -->
+  <rect class="logo-bg" x="32" y="32" width="448" height="448" rx="96" stroke-width="8"/>
 
   <!-- Terminal Prompt Chevron '>' -->
-  <path d="M 140 145 L 285 256 L 140 367" stroke="url(#promptGrad)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path class="prompt-chevron" d="M 140 145 L 285 256 L 140 367" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
 
   <!-- Terminal Cursor Block '_' -->
-  <line x1="280" y1="367" x2="385" y2="367" stroke="url(#cursorGrad)" stroke-width="44" stroke-linecap="round" filter="url(#glow)"/>
+  <line class="cursor-block" x1="280" y1="367" x2="385" y2="367" stroke-width="44" stroke-linecap="round" filter="url(#glow)"/>
 </svg>

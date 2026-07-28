@@ -12,8 +12,8 @@ export function NavBar() {
         >
             <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
                 <a href="/" className="flex items-center gap-2.5 text-foreground font-bold tracking-wider font-mono text-base hover:text-primary transition-colors group">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-950 text-white font-mono text-sm font-black border border-white/10 shadow-sm group-hover:border-primary/50 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.5)] transition-all">
-                        <span className="text-blue-400">&gt;</span><span className="text-emerald-400">_</span>
+                    <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-foreground font-mono text-sm font-black shadow-sm group-hover:border-blue-500/50 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.4)] transition-all">
+                        <span className="text-blue-600 dark:text-blue-400">&gt;</span><span className="text-emerald-600 dark:text-emerald-400">_</span>
                     </span>
                     <span className="tracking-tight text-lg font-bold text-foreground">Moliang</span>
                 </a>
